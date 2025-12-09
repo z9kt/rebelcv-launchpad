@@ -84,7 +84,7 @@ const Pricing = () => {
         <div className="container-main text-center">
           <span className="label-text mb-4 block">Prissättning</span>
           <h1 className="heading-xl mb-6">Priser</h1>
-          <p className="text-lg text-slate-300 max-w-xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto">
             Testa gratis, uppgradera när du behöver mer kraft. Alla planer inkluderar våra grundfunktioner.
           </p>
         </div>
@@ -97,31 +97,31 @@ const Pricing = () => {
             {plans.map((plan, index) => (
               <div
                 key={index}
-                className={`card-dark p-8 relative ${
-                  plan.popular ? "border-primary/50" : ""
+                className={`card-light p-8 relative ${
+                  plan.popular ? "border-primary/50 ring-1 ring-primary/20" : ""
                 }`}
               >
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="px-3 py-1 text-xs font-semibold text-white gradient-primary rounded-full">
+                    <span className="px-3 py-1 text-xs font-semibold text-white bg-primary rounded-full">
                       Populärast
                     </span>
                   </div>
                 )}
 
                 <div className="mb-6">
-                  <h3 className="text-xl font-semibold text-slate-50">{plan.name}</h3>
-                  <p className="text-slate-400 text-sm">{plan.description}</p>
+                  <h3 className="text-xl font-semibold text-foreground">{plan.name}</h3>
+                  <p className="text-muted-foreground text-sm">{plan.description}</p>
                 </div>
 
                 <div className="mb-6">
-                  <span className="text-4xl font-bold text-slate-50">{plan.price}</span>
-                  <span className="text-slate-400 ml-2">{plan.period}</span>
+                  <span className="text-4xl font-bold text-foreground">{plan.price}</span>
+                  <span className="text-muted-foreground ml-2">{plan.period}</span>
                 </div>
 
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-3 text-slate-400 text-sm">
+                    <li key={i} className="flex items-start gap-3 text-muted-foreground text-sm">
                       <Check size={16} className="text-primary mt-0.5 flex-shrink-0" />
                       {feature}
                     </li>
@@ -141,7 +141,7 @@ const Pricing = () => {
       </section>
 
       {/* FAQ */}
-      <section className="section-padding bg-black/30">
+      <section className="section-padding bg-muted/50">
         <div className="container-main max-w-3xl">
           <div className="flex items-center gap-3 mb-8">
             <IconTile size="sm"><HelpCircle size={20} /></IconTile>
@@ -150,11 +150,11 @@ const Pricing = () => {
 
           <Accordion type="single" collapsible className="space-y-4">
             {faqItems.map((item, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="card-dark border-0">
-                <AccordionTrigger className="px-6 py-4 text-slate-50 hover:no-underline">
+              <AccordionItem key={index} value={`item-${index}`} className="card-light border border-border">
+                <AccordionTrigger className="px-6 py-4 text-foreground hover:no-underline">
                   {item.question}
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 text-slate-400">
+                <AccordionContent className="px-6 pb-4 text-muted-foreground">
                   {item.answer}
                 </AccordionContent>
               </AccordionItem>

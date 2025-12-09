@@ -55,7 +55,7 @@ const About = () => {
           <div className="max-w-3xl">
             <span className="label-text mb-4 block">Vision</span>
             <h1 className="heading-xl mb-6">Om RebelCV</h1>
-            <p className="text-lg text-slate-300">
+            <p className="text-lg text-muted-foreground">
               Vi tror att jobbsökning kan vara strategiskt istället för slitsamt. RebelCV föddes ur frustrationen av att ständigt anpassa samma dokument för hand – och insikten att AI kan göra det bättre.
             </p>
           </div>
@@ -63,11 +63,11 @@ const About = () => {
       </section>
 
       {/* Mission */}
-      <section className="section-padding bg-black/30">
+      <section className="section-padding bg-muted/50">
         <div className="container-main">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="heading-md mb-6">Vår mission</h2>
-            <p className="text-xl text-slate-300 leading-relaxed">
+            <p className="text-xl text-muted-foreground leading-relaxed">
               Att ge varje jobbsökare verktygen för att presentera sig på bästa möjliga sätt – utan att spendera oändliga timmar på formatering och omskrivningar.
             </p>
           </div>
@@ -83,12 +83,12 @@ const About = () => {
 
           <div className="grid md:grid-cols-3 gap-6">
             {pillars.map((pillar, index) => (
-              <div key={index} className="card-dark p-8 text-center">
+              <div key={index} className="card-light p-8 text-center">
                 <div className="flex justify-center mb-6">
                   <IconTile>{pillar.icon}</IconTile>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">{pillar.title}</h3>
-                <p className="text-slate-500">{pillar.description}</p>
+                <h3 className="text-xl font-semibold text-foreground mb-3">{pillar.title}</h3>
+                <p className="text-muted-foreground">{pillar.description}</p>
               </div>
             ))}
           </div>
@@ -96,7 +96,7 @@ const About = () => {
       </section>
 
       {/* Timeline */}
-      <section className="section-padding bg-black/30">
+      <section className="section-padding bg-muted/50">
         <div className="container-main max-w-3xl">
           <div className="text-center mb-12">
             <h2 className="heading-md">Vår resa</h2>
@@ -104,7 +104,7 @@ const About = () => {
 
           <div className="relative">
             {/* Line */}
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-white/10" />
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border" />
 
             <div className="space-y-12">
               {timeline.map((item, index) => (
@@ -115,7 +115,7 @@ const About = () => {
                   }`}
                 >
                   {/* Dot */}
-                  <div className="absolute left-4 md:left-1/2 w-8 h-8 -ml-4 rounded-full bg-[#f97316] flex items-center justify-center z-10 text-white">
+                  <div className="absolute left-4 md:left-1/2 w-8 h-8 -ml-4 rounded-full bg-primary flex items-center justify-center z-10 text-white">
                     {item.icon}
                   </div>
 
@@ -126,8 +126,8 @@ const About = () => {
                     }`}
                   >
                     <span className="text-sm text-primary font-medium">{item.date}</span>
-                    <h3 className="text-lg font-semibold text-slate-50 mt-1">{item.title}</h3>
-                    <p className="text-slate-400 mt-2">{item.description}</p>
+                    <h3 className="text-lg font-semibold text-foreground mt-1">{item.title}</h3>
+                    <p className="text-muted-foreground mt-2">{item.description}</p>
                   </div>
                 </div>
               ))}
