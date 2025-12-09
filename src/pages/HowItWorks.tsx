@@ -11,6 +11,7 @@ const steps = [
   {
     icon: <User size={32} />,
     title: "1. Bygg din profil",
+    glowColor: "primary" as const,
     userActions: [
       "Fyll i arbetslivserfarenhet med roller, företag och beskrivningar",
       "Lägg till utbildningar och certifieringar",
@@ -26,6 +27,7 @@ const steps = [
   {
     icon: <Search size={32} />,
     title: "2. Skanna jobb",
+    glowColor: "violet" as const,
     userActions: [
       "Klistra in en jobbannons eller länka till den",
       "Granska den automatiska analysen",
@@ -41,6 +43,7 @@ const steps = [
   {
     icon: <FileCheck size={32} />,
     title: "3. Skapa jobbpakt",
+    glowColor: "emerald" as const,
     userActions: [
       "Välj vilka delar av din profil som ska betonas",
       "Granska och redigera det genererade innehållet",
@@ -73,9 +76,13 @@ const faqItems = [
 const HowItWorks = () => {
   return (
     <>
-      {/* Hero */}
-      <section className="section-padding">
-        <div className="container-main">
+      {/* Hero with decorative elements */}
+      <section className="relative section-padding overflow-hidden">
+        {/* Decorative blurs */}
+        <div className="glow-blur glow-blur-emerald w-[500px] h-[500px] -top-64 -right-64" />
+        <div className="glow-blur glow-blur-violet w-[400px] h-[400px] top-32 -left-48" />
+        
+        <div className="container-main relative z-10">
           <div className="max-w-3xl">
             <span className="label-text mb-4 block">Process</span>
             <h1 className="heading-xl mb-6">Så funkar RebelCV</h1>
@@ -87,18 +94,18 @@ const HowItWorks = () => {
       </section>
 
       {/* Steps */}
-      <section className="section-padding bg-muted/50">
+      <section className="section-padding bg-gradient-to-b from-muted/30 to-muted/60">
         <div className="container-main">
-          <div className="space-y-16">
+          <div className="space-y-8">
             {steps.map((step, index) => (
-              <div key={index} className="card-light p-8 md:p-12">
+              <div key={index} className="card-premium p-8 md:p-12">
                 <div className="flex items-start gap-6 mb-8">
-                  <IconTile size="lg">{step.icon}</IconTile>
+                  <IconTile size="lg" glowColor={step.glowColor}>{step.icon}</IconTile>
                   <h2 className="heading-md">{step.title}</h2>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8">
-                  <div>
+                  <div className="p-6 rounded-xl bg-muted/50 border border-border">
                     <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wider">
                       Vad du gör
                     </h3>
@@ -112,7 +119,7 @@ const HowItWorks = () => {
                     </ul>
                   </div>
 
-                  <div>
+                  <div className="p-6 rounded-xl bg-violet-50/50 dark:bg-violet-950/20 border border-violet-200/50 dark:border-violet-800/30">
                     <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wider">
                       Vad AI gör
                     </h3>
@@ -136,13 +143,13 @@ const HowItWorks = () => {
       <section className="section-padding">
         <div className="container-main max-w-3xl">
           <div className="flex items-center gap-3 mb-8">
-            <IconTile size="sm"><HelpCircle size={20} /></IconTile>
+            <IconTile size="sm" glowColor="violet"><HelpCircle size={20} /></IconTile>
             <h2 className="heading-md">Vanliga frågor om processen</h2>
           </div>
 
           <Accordion type="single" collapsible className="space-y-4">
             {faqItems.map((item, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="card-light border border-border">
+              <AccordionItem key={index} value={`item-${index}`} className="card-premium border border-border overflow-hidden">
                 <AccordionTrigger className="px-6 py-4 text-foreground hover:no-underline">
                   {item.question}
                 </AccordionTrigger>

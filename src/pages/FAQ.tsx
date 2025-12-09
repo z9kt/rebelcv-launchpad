@@ -79,9 +79,13 @@ const faqCategories = [
 const FAQ = () => {
   return (
     <>
-      {/* Hero */}
-      <section className="section-padding">
-        <div className="container-main">
+      {/* Hero with decorative elements */}
+      <section className="relative section-padding overflow-hidden">
+        {/* Decorative blurs */}
+        <div className="glow-blur glow-blur-primary w-[500px] h-[500px] -top-64 -left-64" />
+        <div className="glow-blur glow-blur-emerald w-[400px] h-[400px] top-0 -right-48" />
+        
+        <div className="container-main relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="label-text mb-4 block">Support</span>
             <h1 className="heading-xl mb-6">Vanliga frågor</h1>
@@ -93,7 +97,7 @@ const FAQ = () => {
       </section>
 
       {/* FAQ Categories */}
-      <section className="section-padding bg-muted/50">
+      <section className="section-padding bg-gradient-to-b from-muted/30 to-muted/60">
         <div className="container-main max-w-3xl">
           <div className="space-y-12">
             {faqCategories.map((category, catIndex) => (
@@ -104,7 +108,7 @@ const FAQ = () => {
                     <AccordionItem
                       key={index}
                       value={`${catIndex}-${index}`}
-                      className="card-light border border-border"
+                      className="card-premium border border-border overflow-hidden"
                     >
                       <AccordionTrigger className="px-6 py-4 text-foreground hover:no-underline text-left">
                         {item.question}

@@ -49,6 +49,11 @@
     --glow-primary: 24 95% 53%;
     --surface-light: 0 0% 98%;
     --surface-lighter: 0 0% 100%;
+    
+    /* Decorative gradients */
+    --glow-violet: 263 70% 50%;
+    --glow-emerald: 160 84% 39%;
+    --glow-blue: 217 91% 60%;
   }
 
   .dark {
@@ -162,18 +167,45 @@
     @apply relative rounded-2xl overflow-hidden bg-card border border-border shadow-xl;
   }
 
-  /* Footer wordmark with fade */
+  /* Footer wordmark with fade - more visible */
   .footer-wordmark {
     font-size: clamp(6rem, 18vw, 14rem);
     font-weight: 900;
     letter-spacing: -0.04em;
     line-height: 0.85;
-    background: linear-gradient(to bottom, hsl(var(--foreground) / 0.08) 0%, hsl(var(--foreground) / 0.02) 40%, transparent 100%);
+    background: linear-gradient(to bottom, hsl(var(--foreground) / 0.15) 0%, hsl(var(--foreground) / 0.08) 50%, transparent 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     user-select: none;
     pointer-events: none;
+  }
+
+  /* Premium card with shadow and hover */
+  .card-premium {
+    @apply rounded-2xl border border-border bg-card shadow-lg hover:shadow-xl transition-shadow duration-300;
+  }
+
+  /* Section with muted background */
+  .section-muted {
+    @apply bg-muted/50;
+  }
+
+  /* Decorative glow blur effects */
+  .glow-blur {
+    @apply absolute rounded-full blur-3xl opacity-20 pointer-events-none;
+  }
+
+  .glow-blur-violet {
+    background: radial-gradient(circle, hsl(var(--glow-violet) / 0.4) 0%, transparent 70%);
+  }
+
+  .glow-blur-emerald {
+    background: radial-gradient(circle, hsl(var(--glow-emerald) / 0.4) 0%, transparent 70%);
+  }
+
+  .glow-blur-primary {
+    background: radial-gradient(circle, hsl(var(--primary) / 0.3) 0%, transparent 70%);
   }
 }
 

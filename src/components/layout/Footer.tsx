@@ -20,10 +20,14 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-muted">
-      {/* CTA Section */}
-      <div className="border-t border-border">
-        <div className="container-main py-20 text-center">
+    <footer className="relative overflow-hidden">
+      {/* CTA Section with decorative elements */}
+      <div className="relative border-t border-border bg-gradient-to-b from-muted/80 to-muted">
+        {/* Decorative blurs */}
+        <div className="glow-blur glow-blur-violet w-96 h-96 -top-48 -left-48" />
+        <div className="glow-blur glow-blur-primary w-96 h-96 -top-48 -right-48" />
+        
+        <div className="container-main py-20 text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-3">
             Redo att göra upp med ditt gamla CV?
           </h2>

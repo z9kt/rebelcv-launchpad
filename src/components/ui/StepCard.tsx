@@ -12,7 +12,7 @@ export function StepCard({ icon, step, title, description }: StepCardProps) {
   return (
     <div className="relative flex flex-col items-center text-center">
       {/* Step number */}
-      <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-primary flex items-center justify-center">
+      <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-primary shadow-lg flex items-center justify-center z-10">
         <span className="text-xs font-bold text-primary-foreground">{step}</span>
       </div>
       

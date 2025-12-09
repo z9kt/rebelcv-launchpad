@@ -6,16 +6,19 @@ const pillars = [
     icon: <Eye size={28} />,
     title: "Transparens",
     description: "Du ska alltid veta vad AI:n gör och varför. Inga svarta lådor – full insyn i matchningar och rekommendationer.",
+    glowColor: "primary" as const,
   },
   {
     icon: <Compass size={28} />,
     title: "Kontroll",
     description: "Det är du som styr. AI:n föreslår, men du bestämmer vad som ska synas och hur det ska formuleras.",
+    glowColor: "violet" as const,
   },
   {
     icon: <Rocket size={28} />,
     title: "Utveckling",
     description: "Vi bygger verktyg som hjälper dig växa. Inte bara få nästa jobb, utan utvecklas i din karriär.",
+    glowColor: "emerald" as const,
   },
 ];
 
@@ -49,9 +52,13 @@ const timeline = [
 const About = () => {
   return (
     <>
-      {/* Hero */}
-      <section className="section-padding">
-        <div className="container-main">
+      {/* Hero with decorative elements */}
+      <section className="relative section-padding overflow-hidden">
+        {/* Decorative blurs */}
+        <div className="glow-blur glow-blur-violet w-[500px] h-[500px] -top-64 -right-64" />
+        <div className="glow-blur glow-blur-primary w-[400px] h-[400px] top-32 -left-48" />
+        
+        <div className="container-main relative z-10">
           <div className="max-w-3xl">
             <span className="label-text mb-4 block">Vision</span>
             <h1 className="heading-xl mb-6">Om RebelCV</h1>
@@ -63,13 +70,15 @@ const About = () => {
       </section>
 
       {/* Mission */}
-      <section className="section-padding bg-muted/50">
+      <section className="section-padding bg-gradient-to-b from-muted/30 to-muted/60">
         <div className="container-main">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="heading-md mb-6">Vår mission</h2>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Att ge varje jobbsökare verktygen för att presentera sig på bästa möjliga sätt – utan att spendera oändliga timmar på formatering och omskrivningar.
-            </p>
+            <div className="card-premium p-10 md:p-14">
+              <h2 className="heading-md mb-6">Vår mission</h2>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Att ge varje jobbsökare verktygen för att presentera sig på bästa möjliga sätt – utan att spendera oändliga timmar på formatering och omskrivningar.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -83,9 +92,9 @@ const About = () => {
 
           <div className="grid md:grid-cols-3 gap-6">
             {pillars.map((pillar, index) => (
-              <div key={index} className="card-light p-8 text-center">
+              <div key={index} className="card-premium p-8 text-center">
                 <div className="flex justify-center mb-6">
-                  <IconTile>{pillar.icon}</IconTile>
+                  <IconTile glowColor={pillar.glowColor}>{pillar.icon}</IconTile>
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">{pillar.title}</h3>
                 <p className="text-muted-foreground">{pillar.description}</p>
@@ -96,7 +105,7 @@ const About = () => {
       </section>
 
       {/* Timeline */}
-      <section className="section-padding bg-muted/50">
+      <section className="section-padding bg-gradient-to-b from-muted/30 to-muted/60">
         <div className="container-main max-w-3xl">
           <div className="text-center mb-12">
             <h2 className="heading-md">Vår resa</h2>
@@ -104,7 +113,7 @@ const About = () => {
 
           <div className="relative">
             {/* Line */}
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border" />
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-violet-500/50 to-emerald-500/50" />
 
             <div className="space-y-12">
               {timeline.map((item, index) => (
@@ -115,14 +124,14 @@ const About = () => {
                   }`}
                 >
                   {/* Dot */}
-                  <div className="absolute left-4 md:left-1/2 w-8 h-8 -ml-4 rounded-full bg-primary flex items-center justify-center z-10 text-white">
+                  <div className="absolute left-4 md:left-1/2 w-8 h-8 -ml-4 rounded-full bg-primary shadow-lg flex items-center justify-center z-10 text-primary-foreground">
                     {item.icon}
                   </div>
 
                   {/* Content */}
                   <div
-                    className={`ml-16 md:ml-0 md:w-5/12 ${
-                      index % 2 === 0 ? "md:mr-auto md:text-right md:pr-12" : "md:ml-auto md:pl-12"
+                    className={`ml-16 md:ml-0 md:w-5/12 card-premium p-6 ${
+                      index % 2 === 0 ? "md:mr-auto md:text-right" : "md:ml-auto"
                     }`}
                   >
                     <span className="text-sm text-primary font-medium">{item.date}</span>

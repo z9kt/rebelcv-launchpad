@@ -79,9 +79,13 @@ const faqItems = [
 const Pricing = () => {
   return (
     <>
-      {/* Hero */}
-      <section className="section-padding">
-        <div className="container-main text-center">
+      {/* Hero with decorative elements */}
+      <section className="relative section-padding overflow-hidden">
+        {/* Decorative blurs */}
+        <div className="glow-blur glow-blur-violet w-[500px] h-[500px] -top-64 -right-64" />
+        <div className="glow-blur glow-blur-emerald w-[400px] h-[400px] top-32 -left-48" />
+        
+        <div className="container-main text-center relative z-10">
           <span className="label-text mb-4 block">Prissättning</span>
           <h1 className="heading-xl mb-6">Priser</h1>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto">
@@ -91,19 +95,19 @@ const Pricing = () => {
       </section>
 
       {/* Pricing Cards */}
-      <section className="pb-16">
+      <section className="pb-16 relative">
         <div className="container-main">
           <div className="grid md:grid-cols-3 gap-6">
             {plans.map((plan, index) => (
               <div
                 key={index}
-                className={`card-light p-8 relative ${
-                  plan.popular ? "border-primary/50 ring-1 ring-primary/20" : ""
+                className={`card-premium p-8 relative ${
+                  plan.popular ? "ring-2 ring-primary/30 shadow-xl" : ""
                 }`}
               >
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="px-3 py-1 text-xs font-semibold text-white bg-primary rounded-full">
+                    <span className="px-4 py-1.5 text-xs font-semibold text-primary-foreground bg-primary rounded-full shadow-lg">
                       Populärast
                     </span>
                   </div>
@@ -122,7 +126,7 @@ const Pricing = () => {
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3 text-muted-foreground text-sm">
-                      <Check size={16} className="text-primary mt-0.5 flex-shrink-0" />
+                      <Check size={16} className="text-emerald-500 mt-0.5 flex-shrink-0" />
                       {feature}
                     </li>
                   ))}
@@ -141,16 +145,16 @@ const Pricing = () => {
       </section>
 
       {/* FAQ */}
-      <section className="section-padding bg-muted/50">
+      <section className="section-padding bg-gradient-to-b from-muted/30 to-muted/60">
         <div className="container-main max-w-3xl">
           <div className="flex items-center gap-3 mb-8">
-            <IconTile size="sm"><HelpCircle size={20} /></IconTile>
+            <IconTile size="sm" glowColor="violet"><HelpCircle size={20} /></IconTile>
             <h2 className="heading-md">Frågor om priser</h2>
           </div>
 
           <Accordion type="single" collapsible className="space-y-4">
             {faqItems.map((item, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="card-light border border-border">
+              <AccordionItem key={index} value={`item-${index}`} className="card-premium border border-border overflow-hidden">
                 <AccordionTrigger className="px-6 py-4 text-foreground hover:no-underline">
                   {item.question}
                 </AccordionTrigger>
