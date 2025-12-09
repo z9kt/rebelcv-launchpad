@@ -15,19 +15,19 @@ export function IconTile({ children, size = "md", className = "" }: IconTileProp
 
   return (
     <div className={`relative ${className}`}>
-      {/* Glow effect */}
-      <div className="absolute inset-0 blur-2xl opacity-40 scale-150">
-        <div className="w-full h-full rounded-2xl bg-gradient-radial from-primary-mid/50 to-transparent" />
+      {/* Subtle glow effect */}
+      <div className="absolute inset-0 blur-2xl opacity-20 scale-150">
+        <div className="w-full h-full rounded-2xl bg-[#f97316]" />
       </div>
       
       {/* Icon container */}
       <div
         className={`${sizeClasses[size]} relative flex items-center justify-center rounded-2xl`}
         style={{
-          background: 'linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(255,255,255,0))',
+          background: 'linear-gradient(to bottom, rgba(255,255,255,0.08), rgba(255,255,255,0.02))',
         }}
       >
-        <div className="text-slate-200">{children}</div>
+        <div className="text-slate-300">{children}</div>
       </div>
     </div>
   );

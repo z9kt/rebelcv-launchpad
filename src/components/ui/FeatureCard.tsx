@@ -12,7 +12,7 @@ export function FeatureCard({ icon, title, description, className = "" }: Featur
   return (
     <div className={`card-dark p-6 md:p-8 ${className}`}>
       <IconTile className="mb-6">{icon}</IconTile>
-      <h3 className="text-xl font-semibold text-slate-50 mb-3">{title}</h3>
+      <h3 className="text-xl font-semibold text-white mb-3">{title}</h3>
       <p className="text-slate-400 leading-relaxed">{description}</p>
     </div>
   );
