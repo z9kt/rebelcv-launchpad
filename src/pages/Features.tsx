@@ -87,7 +87,7 @@ const Features = () => {
           <div className="max-w-3xl">
             <span className="label-text mb-4 block">Plattform</span>
             <h1 className="heading-xl mb-6">Funktioner</h1>
-            <p className="text-lg text-slate-300">
+            <p className="text-lg text-muted-foreground">
               RebelCV är uppdelat i tydliga moduler som var och en löser en specifik del av jobbsökningsprocessen. Tillsammans ger de dig full kontroll.
             </p>
           </div>
@@ -100,11 +100,11 @@ const Features = () => {
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-2">
             {flowSteps.map((step, index) => (
               <div key={step} className="flex items-center gap-2 md:gap-4">
-                <div className="px-4 py-2 rounded-full bg-white/5 border border-white/10">
-                  <span className="text-sm font-medium text-slate-300">{step}</span>
+                <div className="px-4 py-2 rounded-full bg-muted border border-border">
+                  <span className="text-sm font-medium text-foreground">{step}</span>
                 </div>
                 {index < flowSteps.length - 1 && (
-                  <ArrowRight size={16} className="text-slate-600 hidden md:block" />
+                  <ArrowRight size={16} className="text-muted-foreground hidden md:block" />
                 )}
               </div>
             ))}
@@ -113,22 +113,22 @@ const Features = () => {
       </section>
 
       {/* Modules Grid */}
-      <section className="section-padding bg-black/30">
+      <section className="section-padding bg-muted/50">
         <div className="container-main">
           <div className="grid md:grid-cols-2 gap-6">
             {modules.map((module, index) => (
-              <div key={index} className="card-dark p-8">
+              <div key={index} className="card-light p-8">
                 <div className="flex items-start gap-4 mb-6">
                   <IconTile>{module.icon}</IconTile>
                   <div>
-                    <h3 className="text-xl font-semibold text-slate-50">{module.title}</h3>
-                    <p className="text-slate-400 text-sm">{module.description}</p>
+                    <h3 className="text-xl font-semibold text-foreground">{module.title}</h3>
+                    <p className="text-muted-foreground text-sm">{module.description}</p>
                   </div>
                 </div>
 
                 <ul className="space-y-3">
                   {module.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-3 text-slate-400 text-sm">
+                    <li key={i} className="flex items-start gap-3 text-muted-foreground text-sm">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
                       {feature}
                     </li>

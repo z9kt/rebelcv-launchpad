@@ -85,7 +85,7 @@ const FAQ = () => {
           <div className="max-w-3xl mx-auto text-center">
             <span className="label-text mb-4 block">Support</span>
             <h1 className="heading-xl mb-6">Vanliga frågor</h1>
-            <p className="text-lg text-slate-300">
+            <p className="text-lg text-muted-foreground">
               Hitta svar på de vanligaste frågorna om RebelCV. Hittar du inte det du söker? Kontakta oss!
             </p>
           </div>
@@ -93,23 +93,23 @@ const FAQ = () => {
       </section>
 
       {/* FAQ Categories */}
-      <section className="section-padding bg-black/30">
+      <section className="section-padding bg-muted/50">
         <div className="container-main max-w-3xl">
           <div className="space-y-12">
             {faqCategories.map((category, catIndex) => (
               <div key={catIndex}>
-                <h2 className="text-xl font-semibold text-slate-50 mb-6">{category.title}</h2>
+                <h2 className="text-xl font-semibold text-foreground mb-6">{category.title}</h2>
                 <Accordion type="single" collapsible className="space-y-4">
                   {category.items.map((item, index) => (
                     <AccordionItem
                       key={index}
                       value={`${catIndex}-${index}`}
-                      className="card-dark border-0"
+                      className="card-light border border-border"
                     >
-                      <AccordionTrigger className="px-6 py-4 text-slate-50 hover:no-underline text-left">
+                      <AccordionTrigger className="px-6 py-4 text-foreground hover:no-underline text-left">
                         {item.question}
                       </AccordionTrigger>
-                      <AccordionContent className="px-6 pb-4 text-slate-400">
+                      <AccordionContent className="px-6 pb-4 text-muted-foreground">
                         {item.answer}
                       </AccordionContent>
                     </AccordionItem>

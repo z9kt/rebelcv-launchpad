@@ -14,15 +14,15 @@ const Login = () => {
   return (
     <section className="section-padding min-h-[80vh] flex items-center justify-center">
       <div className="container-main max-w-md">
-        <div className="card-dark p-8 md:p-10">
+        <div className="card-light p-8 md:p-10">
           <div className="text-center mb-8">
-            <h1 className="text-2xl font-semibold text-slate-50 mb-2">Logga in</h1>
-            <p className="text-slate-400">Välkommen tillbaka till RebelCV</p>
+            <h1 className="text-2xl font-semibold text-foreground mb-2">Logga in</h1>
+            <p className="text-muted-foreground">Välkommen tillbaka till RebelCV</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
                 E-postadress
               </label>
               <input
@@ -30,14 +30,14 @@ const Login = () => {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-slate-50 placeholder:text-slate-500 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-colors"
+                className="w-full px-4 py-3 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-colors"
                 placeholder="din@email.se"
                 required
               />
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-slate-300 mb-2">
+              <label htmlFor="password" className="block text-sm font-medium text-foreground mb-2">
                 Lösenord
               </label>
               <input
@@ -45,17 +45,17 @@ const Login = () => {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-slate-50 placeholder:text-slate-500 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-colors"
+                className="w-full px-4 py-3 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-colors"
                 placeholder="••••••••"
                 required
               />
             </div>
 
             <div className="flex items-center justify-between text-sm">
-              <label className="flex items-center gap-2 text-slate-400">
+              <label className="flex items-center gap-2 text-muted-foreground">
                 <input
                   type="checkbox"
-                  className="w-4 h-4 rounded border-white/10 bg-white/5 text-primary focus:ring-primary/50"
+                  className="w-4 h-4 rounded border-border bg-muted text-primary focus:ring-primary/50"
                 />
                 Kom ihåg mig
               </label>
@@ -69,8 +69,8 @@ const Login = () => {
             </button>
           </form>
 
-          <div className="mt-8 pt-6 border-t border-white/10 text-center">
-            <p className="text-slate-400 text-sm">
+          <div className="mt-8 pt-6 border-t border-border text-center">
+            <p className="text-muted-foreground text-sm">
               Inget konto?{" "}
               <Link to="#" className="text-primary hover:underline">
                 Kom igång gratis

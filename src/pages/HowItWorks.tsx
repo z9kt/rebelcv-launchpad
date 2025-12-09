@@ -79,7 +79,7 @@ const HowItWorks = () => {
           <div className="max-w-3xl">
             <span className="label-text mb-4 block">Process</span>
             <h1 className="heading-xl mb-6">Så funkar RebelCV</h1>
-            <p className="text-lg text-slate-300">
+            <p className="text-lg text-muted-foreground">
               RebelCV bygger på en enkel idé: din profil är basen, och varje jobbansökan blir en unik anpassning. Du berättar vem du är, vi hjälper dig visa det på bästa sätt för varje arbetsgivare.
             </p>
           </div>
@@ -87,11 +87,11 @@ const HowItWorks = () => {
       </section>
 
       {/* Steps */}
-      <section className="section-padding bg-black/30">
+      <section className="section-padding bg-muted/50">
         <div className="container-main">
           <div className="space-y-16">
             {steps.map((step, index) => (
-              <div key={index} className="card-dark p-8 md:p-12">
+              <div key={index} className="card-light p-8 md:p-12">
                 <div className="flex items-start gap-6 mb-8">
                   <IconTile size="lg">{step.icon}</IconTile>
                   <h2 className="heading-md">{step.title}</h2>
@@ -99,12 +99,12 @@ const HowItWorks = () => {
 
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
-                    <h3 className="text-sm font-semibold text-slate-50 mb-4 uppercase tracking-wider">
+                    <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wider">
                       Vad du gör
                     </h3>
                     <ul className="space-y-3">
                       {step.userActions.map((action, i) => (
-                        <li key={i} className="flex items-start gap-3 text-slate-400">
+                        <li key={i} className="flex items-start gap-3 text-muted-foreground">
                           <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
                           {action}
                         </li>
@@ -113,13 +113,13 @@ const HowItWorks = () => {
                   </div>
 
                   <div>
-                    <h3 className="text-sm font-semibold text-slate-50 mb-4 uppercase tracking-wider">
+                    <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wider">
                       Vad AI gör
                     </h3>
                     <ul className="space-y-3">
                       {step.aiActions.map((action, i) => (
-                        <li key={i} className="flex items-start gap-3 text-slate-400">
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary-mid mt-2 flex-shrink-0" />
+                        <li key={i} className="flex items-start gap-3 text-muted-foreground">
+                          <span className="w-1.5 h-1.5 rounded-full bg-violet-500 mt-2 flex-shrink-0" />
                           {action}
                         </li>
                       ))}
@@ -142,11 +142,11 @@ const HowItWorks = () => {
 
           <Accordion type="single" collapsible className="space-y-4">
             {faqItems.map((item, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="card-dark border-0">
-                <AccordionTrigger className="px-6 py-4 text-slate-50 hover:no-underline">
+              <AccordionItem key={index} value={`item-${index}`} className="card-light border border-border">
+                <AccordionTrigger className="px-6 py-4 text-foreground hover:no-underline">
                   {item.question}
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 text-slate-400">
+                <AccordionContent className="px-6 pb-4 text-muted-foreground">
                   {item.answer}
                 </AccordionContent>
               </AccordionItem>
