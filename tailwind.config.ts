@@ -114,7 +114,7 @@ export default {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-primary': 'linear-gradient(135deg, #2563EB 0%, #7C3AED 50%, #A855F7 100%)',
+        'gradient-primary': 'linear-gradient(135deg, hsl(25, 95%, 53%) 0%, hsl(32, 98%, 50%) 50%, hsl(38, 92%, 50%) 100%)',
       },
     },
   },
