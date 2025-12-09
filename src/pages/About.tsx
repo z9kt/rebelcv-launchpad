@@ -23,26 +23,26 @@ const timeline = [
   {
     icon: <Lightbulb size={20} />,
     title: "Idén föds",
-    date: "2023",
+    date: "Aug 2025",
     description: "Frustrationen över att ständigt anpassa samma CV-dokument ledde till en enkel fråga: varför kan inte detta automatiseras?",
   },
   {
     icon: <Code size={20} />,
     title: "Första prototypen",
-    date: "2023",
-    description: "En enkel AI-driven matcher byggdes för att testa konceptet. Resultaten var lovande.",
+    date: "Sep 2025",
+    description: "En första AI-driven matcher byggdes för att testa konceptet. Resultaten var lovande.",
   },
   {
     icon: <Users size={20} />,
     title: "Betatest",
-    date: "2024",
-    description: "50 användare testade plattformen och gav ovärderlig feedback som formade produkten.",
+    date: "Okt 2025",
+    description: "Tidiga användare testade plattformen och gav ovärderlig feedback som formade produkten.",
   },
   {
     icon: <Zap size={20} />,
     title: "Lansering",
-    date: "2024",
-    description: "RebelCV lanserades för allmänheten med full funktionalitet och snabbt växande användarbas.",
+    date: "Dec 2025",
+    description: "RebelCV lanseras för allmänheten med full funktionalitet och växande användarbas.",
   },
 ];
 

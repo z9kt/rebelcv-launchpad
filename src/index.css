@@ -18,12 +18,12 @@
     --popover: 230 70% 4%;
     --popover-foreground: 210 40% 98%;
 
-    /* Primary gradient colors */
-    --primary: 221 83% 53%;
+    /* Primary gradient colors - Orange/Amber */
+    --primary: 25 95% 53%;
     --primary-foreground: 210 40% 98%;
-    --primary-start: 221 83% 53%;
-    --primary-mid: 263 70% 58%;
-    --primary-end: 270 91% 65%;
+    --primary-start: 25 95% 53%;
+    --primary-mid: 32 98% 50%;
+    --primary-end: 38 92% 50%;
 
     /* Secondary */
     --secondary: 217 33% 17%;
@@ -44,12 +44,12 @@
     /* Border and input */
     --border: 217 33% 17%;
     --input: 217 33% 17%;
-    --ring: 221 83% 53%;
+    --ring: 25 95% 53%;
 
     --radius: 0.5rem;
 
     /* Custom design tokens */
-    --glow-primary: 243 75% 59%;
+    --glow-primary: 25 95% 53%;
     --surface-dark: 230 70% 4%;
     --surface-darker: 222 47% 2%;
   }
@@ -71,7 +71,7 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    background: linear-gradient(to bottom, #020617 0%, #020617 50%, #000000 100%);
+    background: linear-gradient(180deg, #030712 0%, #000000 100%);
     min-height: 100vh;
   }
 }
@@ -80,13 +80,13 @@
   /* Primary gradient button */
   .btn-primary {
     @apply relative inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white rounded-full transition-all duration-300;
-    background: linear-gradient(135deg, #2563EB 0%, #7C3AED 50%, #A855F7 100%);
-    box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.1), 0 4px 20px -4px rgba(124, 58, 237, 0.5);
+    background: linear-gradient(135deg, hsl(25, 95%, 53%) 0%, hsl(32, 98%, 50%) 50%, hsl(38, 92%, 50%) 100%);
+    box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.1), 0 4px 20px -4px rgba(249, 115, 22, 0.5);
   }
 
   .btn-primary:hover {
     transform: translateY(-1px);
-    box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.15), 0 8px 30px -4px rgba(124, 58, 237, 0.6);
+    box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.15), 0 8px 30px -4px rgba(249, 115, 22, 0.6);
   }
 
   /* Secondary outline button */
@@ -113,7 +113,7 @@
   .icon-tile::before {
     content: '';
     @apply absolute inset-0 -z-10 blur-2xl opacity-40;
-    background: radial-gradient(circle, rgba(79, 70, 229, 0.4) 0%, transparent 70%);
+    background: radial-gradient(circle, hsl(25 95% 53% / 0.4) 0%, transparent 70%);
     transform: scale(2);
   }
 
@@ -155,7 +155,7 @@
   /* Gradient border card */
   .gradient-border-card {
     @apply relative rounded-3xl p-px overflow-hidden;
-    background: linear-gradient(135deg, #2563EB 0%, #7C3AED 50%, #A855F7 100%);
+    background: linear-gradient(135deg, hsl(25, 95%, 53%) 0%, hsl(32, 98%, 50%) 50%, hsl(38, 92%, 50%) 100%);
   }
 
   .gradient-border-card > * {
@@ -179,16 +179,16 @@
   /* Gradient text */
   .gradient-text {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #2563EB 0%, #7C3AED 50%, #A855F7 100%);
+    background-image: linear-gradient(135deg, hsl(25, 95%, 53%) 0%, hsl(32, 98%, 50%) 50%, hsl(38, 92%, 50%) 100%);
   }
 
   /* Primary gradient background */
   .gradient-primary {
-    background: linear-gradient(135deg, #2563EB 0%, #7C3AED 50%, #A855F7 100%);
+    background: linear-gradient(135deg, hsl(25, 95%, 53%) 0%, hsl(32, 98%, 50%) 50%, hsl(38, 92%, 50%) 100%);
   }
 
   /* Glow effect */
   .glow-primary {
-    box-shadow: 0 0 60px rgba(124, 58, 237, 0.3);
+    box-shadow: 0 0 60px rgba(249, 115, 22, 0.3);
   }
 }
