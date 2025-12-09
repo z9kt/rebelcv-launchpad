@@ -14,20 +14,30 @@ export function IconTile({ children, size = "md", className = "" }: IconTileProp
   };
 
   return (
-    <div className={`relative ${className}`}>
-      {/* Subtle glow effect */}
-      <div className="absolute inset-0 blur-2xl opacity-20 scale-150">
-        <div className="w-full h-full rounded-2xl bg-[#f97316]" />
-      </div>
-      
-      {/* Icon container */}
-      <div
-        className={`${sizeClasses[size]} relative flex items-center justify-center rounded-2xl`}
+    <div className={`relative ${sizeClasses[size]} ${className}`}>
+      {/* Border that fades from top to bottom */}
+      <div 
+        className="absolute inset-0 rounded-2xl"
         style={{
-          background: 'linear-gradient(to bottom, rgba(255,255,255,0.08), rgba(255,255,255,0.02))',
+          background: 'linear-gradient(to bottom, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.02) 100%)',
+          padding: '1px',
+          WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+          WebkitMaskComposite: 'xor',
+          maskComposite: 'exclude',
         }}
-      >
-        <div className="text-slate-300">{children}</div>
+      />
+      
+      {/* Background */}
+      <div 
+        className="absolute inset-0 rounded-2xl"
+        style={{
+          background: 'linear-gradient(to bottom, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%)',
+        }}
+      />
+      
+      {/* Icon */}
+      <div className="relative flex items-center justify-center w-full h-full text-slate-400">
+        {children}
       </div>
     </div>
   );

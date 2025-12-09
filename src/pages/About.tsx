@@ -87,8 +87,8 @@ const About = () => {
                 <div className="flex justify-center mb-6">
                   <IconTile>{pillar.icon}</IconTile>
                 </div>
-                <h3 className="text-xl font-semibold text-slate-50 mb-3">{pillar.title}</h3>
-                <p className="text-slate-400">{pillar.description}</p>
+                <h3 className="text-xl font-semibold text-white mb-3">{pillar.title}</h3>
+                <p className="text-slate-500">{pillar.description}</p>
               </div>
             ))}
           </div>
@@ -115,7 +115,7 @@ const About = () => {
                   }`}
                 >
                   {/* Dot */}
-                  <div className="absolute left-4 md:left-1/2 w-8 h-8 -ml-4 rounded-full gradient-primary flex items-center justify-center z-10">
+                  <div className="absolute left-4 md:left-1/2 w-8 h-8 -ml-4 rounded-full bg-[#f97316] flex items-center justify-center z-10 text-white">
                     {item.icon}
                   </div>
 
