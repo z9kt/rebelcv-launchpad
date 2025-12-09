@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { Check, Sparkles, FileText, Share2, Search, ClipboardPaste, Zap, ArrowRight } from "lucide-react";
+import { Check, Sparkles, FileText, Search, ClipboardPaste, Zap, ArrowRight, Lightbulb } from "lucide-react";
 
 const features = [
   { text: "AI-optimerat CV och personligt brev" },
+  { text: "Smarta förslag som anpassar dina titlar till jobbet" },
   { text: "Jobbmatchning och karriäranalys" },
-  { text: "Export till PDF, Word och delbar länk" },
 ];
 
 export function HeroSection() {
@@ -77,56 +77,62 @@ export function HeroSection() {
                 {/* Main content - Light */}
                 <div className="flex-1 bg-white p-5">
                   {/* Paste URL Section */}
-                  <div className="mb-5">
-                    <p className="text-xs font-medium text-slate-500 uppercase tracking-wider mb-2">Steg 1</p>
+                  <div className="mb-4">
                     <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2.5">
                       <ClipboardPaste size={16} className="text-[#f97316]" />
-                      <span className="text-sm text-slate-500 flex-1">https://linkedin.com/jobs/123...</span>
+                      <span className="text-sm text-slate-500 flex-1 truncate">https://linkedin.com/jobs/senior-projektledare...</span>
                       <button className="px-3 py-1.5 bg-[#f97316] text-white text-xs font-medium rounded-md">
                         Analysera
                       </button>
                     </div>
                   </div>
 
-                  {/* Results Preview */}
-                  <div className="space-y-3">
-                    <p className="text-xs font-medium text-slate-500 uppercase tracking-wider">Resultat</p>
-                    
-                    {/* Match Score */}
-                    <div className="bg-slate-50 rounded-lg p-3 border border-slate-200">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm font-medium text-slate-700">Matchning</span>
-                        <span className="text-lg font-bold text-emerald-600">84%</span>
+                  {/* Match Score */}
+                  <div className="bg-slate-50 rounded-lg p-3 border border-slate-200 mb-3">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-sm font-medium text-slate-700">Matchning</span>
+                      <span className="text-lg font-bold text-emerald-600">84%</span>
+                    </div>
+                    <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+                      <div className="h-full w-[84%] bg-emerald-500 rounded-full" />
+                    </div>
+                  </div>
+
+                  {/* AI Tips - The gray zone feature */}
+                  <div className="bg-amber-50 rounded-lg p-3 border border-amber-200 mb-3">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Lightbulb size={14} className="text-amber-600" />
+                      <span className="text-xs font-semibold text-amber-800">AI-förslag</span>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2 text-xs">
+                        <span className="text-slate-500 line-through">Projektledare</span>
+                        <ArrowRight size={10} className="text-amber-600" />
+                        <span className="text-slate-700 font-medium">"Agil förändringsledare"</span>
                       </div>
-                      <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
-                        <div className="h-full w-[84%] bg-emerald-500 rounded-full" />
+                      <div className="flex items-center gap-2 text-xs">
+                        <span className="text-slate-500 line-through">Teamledare</span>
+                        <ArrowRight size={10} className="text-amber-600" />
+                        <span className="text-slate-700 font-medium">"Tvärfunktionell teamcoach"</span>
                       </div>
                     </div>
+                  </div>
 
-                    {/* Generated items */}
-                    <div className="grid grid-cols-2 gap-2">
-                      <div className="bg-slate-50 rounded-lg p-3 border border-slate-200 hover:border-slate-300 transition-colors cursor-pointer">
-                        <div className="flex items-center gap-2 mb-1">
-                          <FileText size={14} className="text-[#f97316]" />
-                          <span className="text-xs font-medium text-slate-700">CV</span>
-                        </div>
-                        <p className="text-xs text-slate-500">Anpassat för tjänsten</p>
-                        <div className="flex items-center gap-1 mt-2 text-[#f97316]">
-                          <span className="text-xs font-medium">Öppna</span>
-                          <ArrowRight size={10} />
-                        </div>
+                  {/* Generated items */}
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="bg-slate-50 rounded-lg p-3 border border-slate-200 hover:border-slate-300 transition-colors cursor-pointer">
+                      <div className="flex items-center gap-2 mb-1">
+                        <FileText size={14} className="text-[#f97316]" />
+                        <span className="text-xs font-medium text-slate-700">CV</span>
                       </div>
-                      <div className="bg-slate-50 rounded-lg p-3 border border-slate-200 hover:border-slate-300 transition-colors cursor-pointer">
-                        <div className="flex items-center gap-2 mb-1">
-                          <Sparkles size={14} className="text-[#f97316]" />
-                          <span className="text-xs font-medium text-slate-700">Brev</span>
-                        </div>
-                        <p className="text-xs text-slate-500">Personligt anpassat</p>
-                        <div className="flex items-center gap-1 mt-2 text-[#f97316]">
-                          <span className="text-xs font-medium">Öppna</span>
-                          <ArrowRight size={10} />
-                        </div>
+                      <p className="text-xs text-slate-500">Anpassat för tjänsten</p>
+                    </div>
+                    <div className="bg-slate-50 rounded-lg p-3 border border-slate-200 hover:border-slate-300 transition-colors cursor-pointer">
+                      <div className="flex items-center gap-2 mb-1">
+                        <Sparkles size={14} className="text-[#f97316]" />
+                        <span className="text-xs font-medium text-slate-700">Brev</span>
                       </div>
+                      <p className="text-xs text-slate-500">Personligt anpassat</p>
                     </div>
                   </div>
                 </div>
