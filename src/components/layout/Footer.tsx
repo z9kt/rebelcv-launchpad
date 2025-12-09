@@ -20,14 +20,14 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-[#08090d]">
-      {/* CTA Section - clean dark, no gradient */}
-      <div className="border-t border-white/[0.06]">
+    <footer className="relative overflow-hidden bg-muted">
+      {/* CTA Section */}
+      <div className="border-t border-border">
         <div className="container-main py-20 text-center">
-          <h2 className="text-3xl md:text-4xl font-semibold text-white mb-3">
+          <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-3">
             Redo att göra upp med ditt gamla CV?
           </h2>
-          <p className="text-slate-400 mb-8 max-w-xl mx-auto">
+          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
             Sluta anpassa samma dokument om och om igen. Låt RebelCV göra jobbet åt dig.
           </p>
           <Link to="/logga-in" className="btn-primary">
@@ -37,26 +37,26 @@ export function Footer() {
       </div>
 
       {/* Links Section */}
-      <div className="border-t border-white/[0.06]">
+      <div className="border-t border-border bg-background">
         <div className="container-main py-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {/* Brand */}
             <div className="col-span-2 md:col-span-1">
-              <p className="text-sm text-slate-500 leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 RebelCV kombinerar AI med smart karriärstrategi för att skapa CV:n och personliga brev som sticker ut.
               </p>
-              <p className="text-xs text-slate-600 mt-4">
+              <p className="text-xs text-muted-foreground/70 mt-4">
                 © {new Date().getFullYear()} RebelCV
               </p>
             </div>
 
             {/* Produkt */}
             <div>
-              <h3 className="text-xs font-medium text-slate-500 uppercase tracking-wider mb-4">Produkt</h3>
+              <h3 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-4">Produkt</h3>
               <ul className="space-y-3">
                 {footerLinks.produkt.map((link) => (
                   <li key={link.to}>
-                    <Link to={link.to} className="text-sm text-slate-400 hover:text-white transition-colors">
+                    <Link to={link.to} className="text-sm text-foreground/70 hover:text-foreground transition-colors">
                       {link.label}
                     </Link>
                   </li>
@@ -66,11 +66,11 @@ export function Footer() {
 
             {/* Support */}
             <div>
-              <h3 className="text-xs font-medium text-slate-500 uppercase tracking-wider mb-4">Support</h3>
+              <h3 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-4">Support</h3>
               <ul className="space-y-3">
                 {footerLinks.support.map((link) => (
                   <li key={link.label}>
-                    <Link to={link.to} className="text-sm text-slate-400 hover:text-white transition-colors">
+                    <Link to={link.to} className="text-sm text-foreground/70 hover:text-foreground transition-colors">
                       {link.label}
                     </Link>
                   </li>
@@ -80,11 +80,11 @@ export function Footer() {
 
             {/* Om */}
             <div>
-              <h3 className="text-xs font-medium text-slate-500 uppercase tracking-wider mb-4">Företag</h3>
+              <h3 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-4">Företag</h3>
               <ul className="space-y-3">
                 {footerLinks.om.map((link) => (
                   <li key={link.label}>
-                    <Link to={link.to} className="text-sm text-slate-400 hover:text-white transition-colors">
+                    <Link to={link.to} className="text-sm text-foreground/70 hover:text-foreground transition-colors">
                       {link.label}
                     </Link>
                   </li>
@@ -95,14 +95,14 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar with Wordmark */}
-        <div className="relative border-t border-white/[0.06]">
+        <div className="relative border-t border-border">
           <div className="container-main py-6">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="flex gap-6">
-                <Link to="#" className="text-xs text-slate-600 hover:text-slate-400 transition-colors">
+                <Link to="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
                   Integritetspolicy
                 </Link>
-                <Link to="#" className="text-xs text-slate-600 hover:text-slate-400 transition-colors">
+                <Link to="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
                   Användarvillkor
                 </Link>
               </div>

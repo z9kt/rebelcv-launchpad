@@ -26,7 +26,7 @@ const features = [
 
 export function FeaturesGridSection() {
   return (
-    <section className="section-padding bg-black/30">
+    <section className="section-padding bg-muted">
       <div className="container-main">
         <div className="text-center mb-12 md:mb-16">
           <span className="label-text mb-4 block">Möjligheter</span>

@@ -30,7 +30,7 @@ export function HowItWorksSection() {
 
         <div className="relative">
           {/* Connection line */}
-          <div className="hidden md:block absolute top-16 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+          <div className="hidden md:block absolute top-16 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
           
           <div className="grid md:grid-cols-3 gap-12">
             {steps.map((step, index) => (
