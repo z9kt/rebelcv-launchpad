@@ -15,11 +15,11 @@ export function IconTile({ children, size = "md", className = "" }: IconTileProp
 
   return (
     <div className={`relative ${sizeClasses[size]} ${className}`}>
-      {/* Border that fades from top to bottom */}
+      {/* Border that fades from top to bottom - more prominent */}
       <div 
         className="absolute inset-0 rounded-2xl"
         style={{
-          background: 'linear-gradient(to bottom, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.02) 100%)',
+          background: 'linear-gradient(to bottom, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 40%, transparent 100%)',
           padding: '1px',
           WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
           WebkitMaskComposite: 'xor',
@@ -27,11 +27,11 @@ export function IconTile({ children, size = "md", className = "" }: IconTileProp
         }}
       />
       
-      {/* Background */}
+      {/* Background - also fades */}
       <div 
         className="absolute inset-0 rounded-2xl"
         style={{
-          background: 'linear-gradient(to bottom, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%)',
+          background: 'linear-gradient(to bottom, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 50%, transparent 100%)',
         }}
       />
       
