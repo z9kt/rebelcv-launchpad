@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Check, Sparkles, FileText, Zap, Lightbulb, CheckCircle, Target, TrendingUp, ArrowRight } from "lucide-react";
+import { Check, Sparkles, FileText, ArrowRight, Download, CheckCircle2, AlertCircle } from "lucide-react";
 
 const features = [
   { text: "AI-optimerat CV och personligt brev" },
@@ -11,7 +11,7 @@ export function HeroSection() {
   return (
     <section className="section-padding overflow-hidden">
       <div className="container-main">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
           <div className="space-y-8">
             <div className="space-y-6">
@@ -37,8 +37,8 @@ export function HeroSection() {
             <ul className="space-y-3">
               {features.map((feature, index) => (
                 <li key={index} className="flex items-center gap-3 text-muted-foreground">
-                  <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                    <Check size={12} className="text-primary-foreground" />
+                  <div className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0">
+                    <Check size={12} className="text-white" />
                   </div>
                   <span className="text-sm">{feature.text}</span>
                 </li>
@@ -48,124 +48,137 @@ export function HeroSection() {
 
           {/* Right - Premium App Mockup */}
           <div className="relative">
-            {/* Main container with bento grid layout */}
-            <div className="grid grid-cols-2 gap-3">
-              
-              {/* Top Left - Job Match Score */}
-              <div className="bg-card rounded-2xl p-5 border border-border shadow-sm">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center">
-                    <Target size={16} className="text-emerald-600" />
-                  </div>
-                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Matchning</span>
+            {/* Browser-style app frame */}
+            <div className="rounded-2xl overflow-hidden shadow-2xl border border-border/50 bg-background">
+              {/* Browser top bar */}
+              <div className="bg-muted/50 border-b border-border px-4 py-3 flex items-center gap-3">
+                <div className="flex gap-1.5">
+                  <div className="w-3 h-3 rounded-full bg-red-400" />
+                  <div className="w-3 h-3 rounded-full bg-amber-400" />
+                  <div className="w-3 h-3 rounded-full bg-emerald-400" />
                 </div>
-                <div className="flex items-end gap-2 mb-3">
-                  <span className="text-4xl font-bold text-foreground">84</span>
-                  <span className="text-xl font-bold text-emerald-600 mb-1">%</span>
-                </div>
-                <div className="w-full h-2 bg-muted rounded-full overflow-hidden mb-3">
-                  <div className="h-full w-[84%] bg-emerald-500 rounded-full" />
-                </div>
-                <p className="text-xs text-muted-foreground">Senior Projektledare – TechCorp AB</p>
-              </div>
-
-              {/* Top Right - AI Suggestions */}
-              <div className="bg-card rounded-2xl p-5 border border-border shadow-sm">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center">
-                    <Lightbulb size={16} className="text-amber-600" />
-                  </div>
-                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">AI-tips</span>
-                </div>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs text-muted-foreground line-through">Kundtjänst</span>
-                    <ArrowRight size={10} className="text-amber-600" />
-                    <span className="text-xs text-foreground font-medium">Kundframgångsspecialist</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs text-muted-foreground line-through">Hjälpte kollegor</span>
-                    <ArrowRight size={10} className="text-amber-600" />
-                    <span className="text-xs text-foreground font-medium">Coachade nya medarbetare</span>
-                  </div>
-                  <div className="text-xs text-amber-600 flex items-center gap-1 mt-2">
-                    <Sparkles size={10} />
-                    <span>+4 förslag till</span>
+                <div className="flex-1 flex justify-center">
+                  <div className="bg-background border border-border rounded-lg px-4 py-1.5 text-xs text-muted-foreground flex items-center gap-2 max-w-xs">
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                    app.rebelcv.se
                   </div>
                 </div>
               </div>
 
-              {/* Bottom Left - Analysis */}
-              <div className="bg-card rounded-2xl p-5 border border-border shadow-sm">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center">
-                    <TrendingUp size={16} className="text-blue-600" />
+              {/* App content */}
+              <div className="p-6 space-y-5">
+                {/* Job input section */}
+                <div className="flex items-center gap-3 p-3 bg-muted/30 rounded-xl border border-border">
+                  <div className="flex-1 text-sm text-foreground truncate">
+                    linkedin.com/jobs/senior-projektledare-techcorp
                   </div>
-                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Analys</span>
-                </div>
-                <div className="space-y-2">
-                  <div className="flex items-start gap-2">
-                    <CheckCircle size={12} className="text-emerald-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-xs text-foreground">Ledarerfarenhet matchar</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle size={12} className="text-emerald-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-xs text-foreground">Agila metoder ✓</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <Target size={12} className="text-amber-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-xs text-muted-foreground">Scrum-cert. saknas</span>
+                  <div className="px-3 py-1.5 bg-emerald-500 text-white text-xs font-medium rounded-lg">
+                    Analyserad
                   </div>
                 </div>
-              </div>
 
-              {/* Bottom Right - Generated Letter Preview */}
-              <div className="bg-card rounded-2xl p-5 border border-border shadow-sm">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center">
-                    <FileText size={16} className="text-purple-600" />
-                  </div>
-                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Personligt brev</span>
-                </div>
-                <div className="space-y-2">
-                  <p className="text-xs text-foreground leading-relaxed">
-                    "Med 7 års erfarenhet av att leda agila team och leverera projekt värda 15+ MSEK, ser jag fram emot att..."
-                  </p>
-                  <div className="flex items-center gap-2 pt-2">
-                    <span className="text-xs text-purple-600 flex items-center gap-1">
-                      <Sparkles size={10} />
-                      AI-genererat
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Full width bottom - CV Preview */}
-              <div className="col-span-2 bg-card rounded-2xl p-5 border border-border shadow-sm">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-                      <Zap size={18} className="text-primary-foreground" />
+                {/* Match score - prominent display */}
+                <div className="flex items-center justify-between p-4 bg-gradient-to-r from-emerald-50 to-emerald-100/50 rounded-xl border border-emerald-200/50">
+                  <div className="flex items-center gap-4">
+                    <div className="relative">
+                      <svg className="w-16 h-16 -rotate-90">
+                        <circle cx="32" cy="32" r="28" fill="none" stroke="#e5e7eb" strokeWidth="4" />
+                        <circle cx="32" cy="32" r="28" fill="none" stroke="#10b981" strokeWidth="4" strokeDasharray="176" strokeDashoffset="28" strokeLinecap="round" />
+                      </svg>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-xl font-bold text-foreground">84%</span>
+                      </div>
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-foreground">Ditt anpassade CV är klart</p>
-                      <p className="text-xs text-muted-foreground">Optimerat för: Senior Projektledare</p>
+                      <p className="font-semibold text-foreground">Stark matchning</p>
+                      <p className="text-sm text-muted-foreground">Senior Projektledare</p>
                     </div>
                   </div>
-                  <button className="px-4 py-2 bg-primary text-primary-foreground text-xs font-medium rounded-lg flex items-center gap-2 hover:opacity-90 transition-opacity">
-                    Ladda ner
-                    <ArrowRight size={12} />
-                  </button>
                 </div>
-                <div className="flex gap-2 flex-wrap">
-                  {["Projektledning", "Agil utveckling", "Stakeholder mgmt", "Budgetansvar"].map((skill) => (
-                    <span key={skill} className="px-2.5 py-1 bg-muted text-muted-foreground text-xs rounded-full border border-border">
-                      {skill}
-                    </span>
-                  ))}
+
+                {/* Two column layout */}
+                <div className="grid grid-cols-2 gap-4">
+                  {/* AI Suggestions */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2">
+                      <Sparkles size={14} className="text-violet-500" />
+                      <span className="text-xs font-semibold text-foreground uppercase tracking-wide">AI-förslag</span>
+                    </div>
+                    <div className="space-y-2 text-sm">
+                      <div className="p-2.5 bg-muted/50 rounded-lg border border-border">
+                        <p className="text-muted-foreground text-xs mb-1">Din titel:</p>
+                        <p className="text-foreground font-medium text-xs">"Projektledare" → <span className="text-violet-600">"IT-projektledare med agil expertis"</span></p>
+                      </div>
+                      <div className="p-2.5 bg-muted/50 rounded-lg border border-border">
+                        <p className="text-muted-foreground text-xs mb-1">Din erfarenhet:</p>
+                        <p className="text-foreground font-medium text-xs">"Ledde team" → <span className="text-violet-600">"Coachade tvärfunktionella team"</span></p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Analysis */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 size={14} className="text-emerald-500" />
+                      <span className="text-xs font-semibold text-foreground uppercase tracking-wide">Analys</span>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2 text-xs">
+                        <CheckCircle2 size={12} className="text-emerald-500" />
+                        <span className="text-foreground">7+ års ledarerfarenhet</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs">
+                        <CheckCircle2 size={12} className="text-emerald-500" />
+                        <span className="text-foreground">Agila metoder bekräftat</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs">
+                        <CheckCircle2 size={12} className="text-emerald-500" />
+                        <span className="text-foreground">Budgetansvar matchar</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs">
+                        <AlertCircle size={12} className="text-amber-500" />
+                        <span className="text-muted-foreground">Saknar: Scrum-certifiering</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Cover letter preview */}
+                <div className="p-4 bg-slate-50 rounded-xl border border-slate-200/50">
+                  <div className="flex items-center gap-2 mb-3">
+                    <FileText size={14} className="text-slate-500" />
+                    <span className="text-xs font-semibold text-foreground uppercase tracking-wide">Personligt brev</span>
+                    <span className="ml-auto text-xs text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">Genererat</span>
+                  </div>
+                  <p className="text-sm text-foreground leading-relaxed italic">
+                    "Med sju års erfarenhet av att leda komplexa IT-projekt och driva agila transformationer, ser jag tjänsten som Senior Projektledare hos TechCorp som ett naturligt nästa steg..."
+                  </p>
+                </div>
+
+                {/* Download CV button */}
+                <div className="flex items-center justify-between p-4 bg-foreground rounded-xl">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
+                      <FileText size={18} className="text-white" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-white">CV_Senior_Projektledare.pdf</p>
+                      <p className="text-xs text-white/60">Optimerat för TechCorp AB</p>
+                    </div>
+                  </div>
+                  <button className="flex items-center gap-2 px-4 py-2 bg-white text-foreground text-sm font-medium rounded-lg hover:bg-white/90 transition-colors">
+                    <Download size={14} />
+                    Ladda ner
+                  </button>
                 </div>
               </div>
             </div>
+
+            {/* Decorative elements */}
+            <div className="absolute -z-10 top-8 -right-8 w-64 h-64 bg-gradient-to-br from-violet-100 to-transparent rounded-full blur-3xl opacity-60" />
+            <div className="absolute -z-10 -bottom-8 -left-8 w-48 h-48 bg-gradient-to-tr from-emerald-100 to-transparent rounded-full blur-3xl opacity-60" />
           </div>
         </div>
       </div>
