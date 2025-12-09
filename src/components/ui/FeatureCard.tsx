@@ -10,10 +10,10 @@ interface FeatureCardProps {
 
 export function FeatureCard({ icon, title, description, className = "" }: FeatureCardProps) {
   return (
-    <div className={`card-dark p-6 md:p-8 ${className}`}>
+    <div className={`card-light p-6 md:p-8 ${className}`}>
       <IconTile className="mb-6">{icon}</IconTile>
-      <h3 className="text-xl font-semibold text-white mb-3">{title}</h3>
-      <p className="text-slate-400 leading-relaxed">{description}</p>
+      <h3 className="text-xl font-semibold text-foreground mb-3">{title}</h3>
+      <p className="text-muted-foreground leading-relaxed">{description}</p>
     </div>
   );
 }

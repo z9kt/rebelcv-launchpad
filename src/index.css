@@ -6,54 +6,66 @@
 
 @layer base {
   :root {
-    /* Core dark theme - almost black with subtle blue */
-    --background: 224 71% 3%;
-    --foreground: 210 40% 98%;
+    /* Core light theme - clean white/gray */
+    --background: 0 0% 100%;
+    --foreground: 224 71% 4%;
 
-    /* Card surfaces - very dark with blue undertone */
-    --card: 224 71% 5%;
-    --card-foreground: 210 40% 98%;
+    /* Card surfaces - subtle gray */
+    --card: 0 0% 98%;
+    --card-foreground: 224 71% 4%;
 
     /* Popover */
-    --popover: 224 71% 5%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
 
     /* Primary - orange accent (used sparingly) */
     --primary: 24 95% 53%;
     --primary-foreground: 0 0% 100%;
 
     /* Secondary */
-    --secondary: 220 20% 14%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 224 71% 4%;
 
     /* Muted */
-    --muted: 220 20% 14%;
-    --muted-foreground: 215 16% 55%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
 
     /* Accent */
-    --accent: 220 20% 14%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 220 14% 96%;
+    --accent-foreground: 224 71% 4%;
 
     /* Destructive */
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
     /* Border and input */
-    --border: 220 20% 14%;
-    --input: 220 20% 14%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
     --ring: 24 95% 53%;
 
     --radius: 0.5rem;
 
     /* Custom design tokens */
     --glow-primary: 24 95% 53%;
-    --surface-dark: 224 71% 5%;
-    --surface-darker: 224 71% 3%;
+    --surface-light: 0 0% 98%;
+    --surface-lighter: 0 0% 100%;
   }
 
   .dark {
     --background: 224 71% 3%;
     --foreground: 210 40% 98%;
+    --card: 224 71% 5%;
+    --card-foreground: 210 40% 98%;
+    --popover: 224 71% 5%;
+    --popover-foreground: 210 40% 98%;
+    --secondary: 220 20% 14%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 220 20% 14%;
+    --muted-foreground: 215 16% 55%;
+    --accent: 220 20% 14%;
+    --accent-foreground: 210 40% 98%;
+    --border: 220 20% 14%;
+    --input: 220 20% 14%;
   }
 }
 
@@ -68,7 +80,6 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    background: #08090d;
     min-height: 100vh;
   }
 }
@@ -84,56 +95,56 @@
     background: hsl(24 95% 48%);
   }
 
-  /* Secondary outline button - clean white/gray */
+  /* Secondary outline button - clean dark on light */
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white rounded-full border border-white/20 bg-transparent transition-all duration-200;
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-foreground rounded-full border border-border bg-transparent transition-all duration-200;
   }
 
   .btn-secondary:hover {
-    @apply bg-white/5 border-white/30;
+    @apply bg-muted border-foreground/20;
   }
 
-  /* Card component - tappz style */
-  .card-dark {
-    @apply rounded-2xl border border-white/[0.06] bg-[#0d0f14];
+  /* Card component - light style */
+  .card-light {
+    @apply rounded-2xl border border-border bg-card shadow-sm;
   }
 
   /* Icon tile with subtle glow */
   .icon-tile {
     @apply relative flex items-center justify-center w-16 h-16 rounded-2xl;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    background: linear-gradient(to bottom, hsl(var(--muted)), hsl(var(--background)));
   }
 
   .icon-tile::before {
     content: '';
-    @apply absolute inset-0 -z-10 blur-2xl opacity-30;
+    @apply absolute inset-0 -z-10 blur-2xl opacity-20;
     background: radial-gradient(circle, hsl(var(--primary) / 0.3) 0%, transparent 70%);
     transform: scale(2);
   }
 
   /* Section label */
   .label-text {
-    @apply text-xs uppercase tracking-[0.2em] text-slate-500;
+    @apply text-xs uppercase tracking-[0.2em] text-muted-foreground;
   }
 
-  /* Large heading - white */
+  /* Large heading - dark on light */
   .heading-xl {
-    @apply text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-white;
+    @apply text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground;
   }
 
   /* Medium heading */
   .heading-md {
-    @apply text-2xl md:text-3xl font-semibold tracking-tight text-white;
+    @apply text-2xl md:text-3xl font-semibold tracking-tight text-foreground;
   }
 
   /* Body text - gray */
   .body-text {
-    @apply text-slate-400 leading-relaxed;
+    @apply text-muted-foreground leading-relaxed;
   }
 
   /* Secondary text */
   .text-secondary {
-    @apply text-slate-500;
+    @apply text-muted-foreground;
   }
 
   /* Container */
@@ -146,11 +157,9 @@
     @apply py-16 md:py-20 lg:py-24;
   }
 
-  /* App frame mockup */
+  /* App frame mockup - light style */
   .app-frame {
-    @apply relative rounded-2xl overflow-hidden;
-    background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
-    border: 1px solid rgba(255,255,255,0.08);
+    @apply relative rounded-2xl overflow-hidden bg-card border border-border shadow-xl;
   }
 
   /* Footer wordmark with fade */
@@ -159,7 +168,7 @@
     font-weight: 900;
     letter-spacing: -0.04em;
     line-height: 0.85;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 40%, transparent 100%);
+    background: linear-gradient(to bottom, hsl(var(--foreground) / 0.08) 0%, hsl(var(--foreground) / 0.02) 40%, transparent 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -176,6 +185,6 @@
 
   /* Subtle glow effect */
   .glow-subtle {
-    box-shadow: 0 0 40px rgba(249, 115, 22, 0.15);
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.15);
   }
 }

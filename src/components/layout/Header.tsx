@@ -15,13 +15,13 @@ export function Header() {
   const location = useLocation();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#08090d]/80 border-b border-white/[0.06]">
+    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border">
       <div className="container-main">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex flex-col">
-            <span className="text-xl font-semibold tracking-tight text-white">rebelcv</span>
-            <span className="text-xs text-slate-500 -mt-0.5">AI-drivet levande CV</span>
+            <span className="text-xl font-semibold tracking-tight text-foreground">rebelcv</span>
+            <span className="text-xs text-muted-foreground -mt-0.5">AI-drivet levande CV</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -32,8 +32,8 @@ export function Header() {
                 to={link.to}
                 className={`text-sm font-medium transition-colors ${
                   location.pathname === link.to
-                    ? "text-white"
-                    : "text-slate-500 hover:text-white"
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {link.label}
@@ -45,7 +45,7 @@ export function Header() {
           <div className="hidden md:flex items-center gap-4">
             <Link
               to="/logga-in"
-              className="text-sm font-medium text-slate-500 hover:text-white transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               Logga in
             </Link>
@@ -57,7 +57,7 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-white"
+            className="md:hidden p-2 text-foreground"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -66,7 +66,7 @@ export function Header() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-16 bg-[#08090d]/98 backdrop-blur-xl z-40">
+        <div className="md:hidden fixed inset-0 top-16 bg-background/98 backdrop-blur-xl z-40">
           <nav className="flex flex-col p-6 space-y-6">
             {navLinks.map((link) => (
               <Link
@@ -75,18 +75,18 @@ export function Header() {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`text-2xl font-semibold ${
                   location.pathname === link.to
-                    ? "text-white"
-                    : "text-slate-500"
+                    ? "text-foreground"
+                    : "text-muted-foreground"
                 }`}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="pt-6 border-t border-white/[0.06] space-y-4">
+            <div className="pt-6 border-t border-border space-y-4">
               <Link
                 to="/logga-in"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block text-xl text-slate-500"
+                className="block text-xl text-muted-foreground"
               >
                 Logga in
               </Link>
