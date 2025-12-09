@@ -79,18 +79,18 @@ export function HeroSection() {
                 </div>
                 <div className="space-y-3">
                   <div className="flex items-center gap-2">
-                    <span className="text-xs text-slate-500 line-through">Projektledare</span>
+                    <span className="text-xs text-slate-500 line-through">Kundtjänst</span>
                     <ArrowRight size={10} className="text-amber-400" />
-                    <span className="text-xs text-white font-medium">Agil förändringsledare</span>
+                    <span className="text-xs text-white font-medium">Kundframgångsspecialist</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-xs text-slate-500 line-through">Ansvarade för</span>
+                    <span className="text-xs text-slate-500 line-through">Hjälpte kollegor</span>
                     <ArrowRight size={10} className="text-amber-400" />
-                    <span className="text-xs text-white font-medium">Drev och levererade</span>
+                    <span className="text-xs text-white font-medium">Coachade nya medarbetare</span>
                   </div>
                   <div className="text-xs text-amber-400 flex items-center gap-1 mt-2">
                     <Sparkles size={10} />
-                    <span>+3 förslag till</span>
+                    <span>+4 förslag till</span>
                   </div>
                 </div>
               </div>
