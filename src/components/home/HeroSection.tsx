@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Check, Sparkles, FileText, ArrowRight, Download, CheckCircle2, AlertCircle } from "lucide-react";
+import { Check, Sparkles, FileText, Download, CheckCircle2, AlertCircle } from "lucide-react";
 
 const features = [
   { text: "AI-optimerat CV och personligt brev" },
@@ -9,7 +9,20 @@ const features = [
 
 export function HeroSection() {
   return (
-    <section className="section-padding overflow-hidden">
+    <section className="relative section-padding overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 -z-10">
+        <div className="glow-blur glow-blur-violet w-96 h-96 -top-20 -left-20" />
+        <div className="glow-blur glow-blur-emerald w-80 h-80 top-1/2 -right-20" />
+        <div className="glow-blur glow-blur-primary w-64 h-64 bottom-20 left-1/3" />
+      </div>
+      
+      {/* Subtle grid pattern */}
+      <div className="absolute inset-0 -z-10 opacity-30" style={{
+        backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--border)) 1px, transparent 0)`,
+        backgroundSize: '40px 40px'
+      }} />
+
       <div className="container-main">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
@@ -49,9 +62,9 @@ export function HeroSection() {
           {/* Right - Premium App Mockup */}
           <div className="relative">
             {/* Browser-style app frame */}
-            <div className="rounded-2xl overflow-hidden shadow-2xl border border-border/50 bg-background">
+            <div className="rounded-2xl overflow-hidden shadow-2xl border border-border bg-background">
               {/* Browser top bar */}
-              <div className="bg-muted/50 border-b border-border px-4 py-3 flex items-center gap-3">
+              <div className="bg-muted border-b border-border px-4 py-3 flex items-center gap-3">
                 <div className="flex gap-1.5">
                   <div className="w-3 h-3 rounded-full bg-red-400" />
                   <div className="w-3 h-3 rounded-full bg-amber-400" />
@@ -70,7 +83,7 @@ export function HeroSection() {
               {/* App content */}
               <div className="p-6 space-y-5">
                 {/* Job input section */}
-                <div className="flex items-center gap-3 p-3 bg-muted/30 rounded-xl border border-border">
+                <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-xl border border-border">
                   <div className="flex-1 text-sm text-foreground truncate">
                     linkedin.com/jobs/senior-projektledare-techcorp
                   </div>
@@ -146,7 +159,7 @@ export function HeroSection() {
                 </div>
 
                 {/* Cover letter preview */}
-                <div className="p-4 bg-slate-50 rounded-xl border border-slate-200/50">
+                <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
                   <div className="flex items-center gap-2 mb-3">
                     <FileText size={14} className="text-slate-500" />
                     <span className="text-xs font-semibold text-foreground uppercase tracking-wide">Personligt brev</span>
@@ -176,12 +189,15 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Decorative elements */}
-            <div className="absolute -z-10 top-8 -right-8 w-64 h-64 bg-gradient-to-br from-violet-100 to-transparent rounded-full blur-3xl opacity-60" />
-            <div className="absolute -z-10 -bottom-8 -left-8 w-48 h-48 bg-gradient-to-tr from-emerald-100 to-transparent rounded-full blur-3xl opacity-60" />
+            {/* Decorative elements behind mockup */}
+            <div className="absolute -z-10 top-8 -right-8 w-64 h-64 bg-gradient-to-br from-violet-200/60 to-transparent rounded-full blur-3xl" />
+            <div className="absolute -z-10 -bottom-8 -left-8 w-48 h-48 bg-gradient-to-tr from-emerald-200/60 to-transparent rounded-full blur-3xl" />
           </div>
         </div>
       </div>
+      
+      {/* Bottom section divider */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
     </section>
   );
 }

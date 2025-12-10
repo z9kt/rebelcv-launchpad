@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
 interface IconTileProps {
   children: ReactNode;
@@ -15,9 +16,9 @@ export function IconTile({ children, size = "md", className = "", glowColor = "p
   };
 
   const glowClasses = {
-    primary: "bg-primary/10",
-    violet: "bg-violet-500/10",
-    emerald: "bg-emerald-500/10",
+    primary: "from-primary/30 to-primary/10",
+    violet: "from-violet-500/30 to-violet-500/10",
+    emerald: "from-emerald-500/30 to-emerald-500/10",
   };
 
   const iconColorClasses = {
@@ -27,19 +28,25 @@ export function IconTile({ children, size = "md", className = "", glowColor = "p
   };
 
   return (
-    <div className={`relative ${sizeClasses[size]} ${className}`}>
-      {/* Subtle glow effect behind */}
+    <div className={cn("relative inline-flex", sizeClasses[size], className)}>
+      {/* Glow effect behind - enhanced */}
       <div 
-        className={`absolute inset-0 rounded-2xl blur-xl scale-150 opacity-60 ${glowClasses[glowColor]}`}
+        className={cn(
+          "absolute inset-0 rounded-2xl blur-xl scale-150 opacity-70 bg-gradient-to-br",
+          glowClasses[glowColor]
+        )}
       />
       
-      {/* Border with shadow effect */}
+      {/* Icon container with gradient background */}
       <div 
-        className="absolute inset-0 rounded-2xl border border-border bg-card shadow-md"
+        className="absolute inset-0 rounded-2xl border border-border bg-gradient-to-b from-background to-muted shadow-lg"
       />
       
       {/* Icon */}
-      <div className={`relative flex items-center justify-center w-full h-full ${iconColorClasses[glowColor]}`}>
+      <div className={cn(
+        "relative flex items-center justify-center w-full h-full",
+        iconColorClasses[glowColor]
+      )}>
         {children}
       </div>
     </div>
