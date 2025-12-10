@@ -9,20 +9,7 @@ const features = [
 
 export function HeroSection() {
   return (
-    <section className="relative section-padding overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="glow-blur glow-blur-violet w-96 h-96 -top-20 -left-20" />
-        <div className="glow-blur glow-blur-emerald w-80 h-80 top-1/2 -right-20" />
-        <div className="glow-blur glow-blur-primary w-64 h-64 bottom-20 left-1/3" />
-      </div>
-      
-      {/* Subtle grid pattern */}
-      <div className="absolute inset-0 -z-10 opacity-30" style={{
-        backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--border)) 1px, transparent 0)`,
-        backgroundSize: '40px 40px'
-      }} />
-
+    <section className="section-block py-16 md:py-24 overflow-hidden">
       <div className="container-main">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
@@ -62,7 +49,7 @@ export function HeroSection() {
           {/* Right - Premium App Mockup */}
           <div className="relative">
             {/* Browser-style app frame */}
-            <div className="rounded-2xl overflow-hidden shadow-2xl border border-border bg-background">
+            <div className="rounded-2xl overflow-hidden shadow-2xl border border-border/50 bg-card">
               {/* Browser top bar */}
               <div className="bg-muted border-b border-border px-4 py-3 flex items-center gap-3">
                 <div className="flex gap-1.5">
@@ -71,7 +58,7 @@ export function HeroSection() {
                   <div className="w-3 h-3 rounded-full bg-emerald-400" />
                 </div>
                 <div className="flex-1 flex justify-center">
-                  <div className="bg-background border border-border rounded-lg px-4 py-1.5 text-xs text-muted-foreground flex items-center gap-2 max-w-xs">
+                  <div className="bg-card border border-border rounded-lg px-4 py-1.5 text-xs text-muted-foreground flex items-center gap-2 max-w-xs">
                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                     </svg>
@@ -81,7 +68,7 @@ export function HeroSection() {
               </div>
 
               {/* App content */}
-              <div className="p-6 space-y-5">
+              <div className="p-6 space-y-5 bg-card">
                 {/* Job input section */}
                 <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-xl border border-border">
                   <div className="flex-1 text-sm text-foreground truncate">
@@ -188,16 +175,9 @@ export function HeroSection() {
                 </div>
               </div>
             </div>
-
-            {/* Decorative elements behind mockup */}
-            <div className="absolute -z-10 top-8 -right-8 w-64 h-64 bg-gradient-to-br from-violet-200/60 to-transparent rounded-full blur-3xl" />
-            <div className="absolute -z-10 -bottom-8 -left-8 w-48 h-48 bg-gradient-to-tr from-emerald-200/60 to-transparent rounded-full blur-3xl" />
           </div>
         </div>
       </div>
-      
-      {/* Bottom section divider */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
     </section>
   );
 }

@@ -1,5 +1,4 @@
 import { User, Search, FileCheck, HelpCircle } from "lucide-react";
-import { IconTile } from "@/components/ui/IconTile";
 import {
   Accordion,
   AccordionContent,
@@ -9,9 +8,9 @@ import {
 
 const steps = [
   {
-    icon: <User size={32} />,
+    icon: <User size={28} />,
     title: "1. Bygg din profil",
-    glowColor: "primary" as const,
+    color: "emerald",
     userActions: [
       "Fyll i arbetslivserfarenhet med roller, företag och beskrivningar",
       "Lägg till utbildningar och certifieringar",
@@ -25,9 +24,9 @@ const steps = [
     ],
   },
   {
-    icon: <Search size={32} />,
+    icon: <Search size={28} />,
     title: "2. Skanna jobb",
-    glowColor: "violet" as const,
+    color: "violet",
     userActions: [
       "Klistra in en jobbannons eller länka till den",
       "Granska den automatiska analysen",
@@ -41,9 +40,9 @@ const steps = [
     ],
   },
   {
-    icon: <FileCheck size={32} />,
-    title: "3. Skapa jobbpakt",
-    glowColor: "emerald" as const,
+    icon: <FileCheck size={28} />,
+    title: "3. Skapa jobbpaket",
+    color: "blue",
     userActions: [
       "Välj vilka delar av din profil som ska betonas",
       "Granska och redigera det genererade innehållet",
@@ -75,58 +74,72 @@ const faqItems = [
 
 const HowItWorks = () => {
   return (
-    <>
-      {/* Hero with decorative elements */}
-      <section className="relative section-padding overflow-hidden">
-        {/* Decorative blurs */}
-        <div className="glow-blur glow-blur-emerald w-[500px] h-[500px] -top-64 -right-64" />
-        <div className="glow-blur glow-blur-violet w-[400px] h-[400px] top-32 -left-48" />
-        
-        <div className="container-main relative z-10">
-          <div className="max-w-3xl">
+    <div className="space-y-4">
+      {/* Hero */}
+      <section className="section-block py-16 md:py-24">
+        <div className="container-main">
+          <div className="max-w-3xl mx-auto text-center">
             <span className="label-text mb-4 block">Process</span>
             <h1 className="heading-xl mb-6">Så funkar RebelCV</h1>
             <p className="text-lg text-muted-foreground">
-              RebelCV bygger på en enkel idé: din profil är basen, och varje jobbansökan blir en unik anpassning. Du berättar vem du är, vi hjälper dig visa det på bästa sätt för varje arbetsgivare.
+              RebelCV bygger på en enkel idé: din profil är basen, och varje jobbansökan blir en unik anpassning.
             </p>
           </div>
         </div>
       </section>
 
       {/* Steps */}
-      <section className="section-padding bg-gradient-to-b from-muted/30 to-muted/60">
+      <section className="section-block block-gradient-blue py-16 md:py-24">
         <div className="container-main">
-          <div className="space-y-8">
+          <div className="space-y-4">
             {steps.map((step, index) => (
-              <div key={index} className="card-premium p-8 md:p-12">
-                <div className="flex items-start gap-6 mb-8">
-                  <IconTile size="lg" glowColor={step.glowColor}>{step.icon}</IconTile>
-                  <h2 className="heading-md">{step.title}</h2>
+              <div key={index} className="bg-white rounded-2xl p-8 md:p-10">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center ${
+                    step.color === "emerald" ? "bg-emerald-50 text-emerald-600" :
+                    step.color === "violet" ? "bg-violet-50 text-violet-600" :
+                    "bg-blue-50 text-blue-600"
+                  }`}>
+                    {step.icon}
+                  </div>
+                  <h2 className="text-2xl font-semibold text-foreground">{step.title}</h2>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="p-6 rounded-xl bg-muted/50 border border-border">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="p-6 rounded-xl bg-muted/50">
                     <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wider">
                       Vad du gör
                     </h3>
                     <ul className="space-y-3">
                       {step.userActions.map((action, i) => (
                         <li key={i} className="flex items-start gap-3 text-muted-foreground">
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                          <span className={`w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 ${
+                            step.color === "emerald" ? "bg-emerald-500" :
+                            step.color === "violet" ? "bg-violet-500" :
+                            "bg-blue-500"
+                          }`} />
                           {action}
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="p-6 rounded-xl bg-violet-50/50 dark:bg-violet-950/20 border border-violet-200/50 dark:border-violet-800/30">
+                  <div className={`p-6 rounded-xl ${
+                    step.color === "emerald" ? "bg-emerald-50" :
+                    step.color === "violet" ? "bg-violet-50" :
+                    "bg-blue-50"
+                  }`}>
                     <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wider">
                       Vad AI gör
                     </h3>
                     <ul className="space-y-3">
                       {step.aiActions.map((action, i) => (
                         <li key={i} className="flex items-start gap-3 text-muted-foreground">
-                          <span className="w-1.5 h-1.5 rounded-full bg-violet-500 mt-2 flex-shrink-0" />
+                          <span className={`w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 ${
+                            step.color === "emerald" ? "bg-emerald-500" :
+                            step.color === "violet" ? "bg-violet-500" :
+                            "bg-blue-500"
+                          }`} />
                           {action}
                         </li>
                       ))}
@@ -140,16 +153,18 @@ const HowItWorks = () => {
       </section>
 
       {/* Mini FAQ */}
-      <section className="section-padding">
+      <section className="section-block py-16 md:py-24">
         <div className="container-main max-w-3xl">
           <div className="flex items-center gap-3 mb-8">
-            <IconTile size="sm" glowColor="violet"><HelpCircle size={20} /></IconTile>
-            <h2 className="heading-md">Vanliga frågor om processen</h2>
+            <div className="w-12 h-12 rounded-2xl bg-violet-50 flex items-center justify-center text-violet-600">
+              <HelpCircle size={24} />
+            </div>
+            <h2 className="text-2xl font-semibold text-foreground">Vanliga frågor om processen</h2>
           </div>
 
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-3">
             {faqItems.map((item, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="card-premium border border-border overflow-hidden">
+              <AccordionItem key={index} value={`item-${index}`} className="bg-muted/50 rounded-xl border-0 overflow-hidden">
                 <AccordionTrigger className="px-6 py-4 text-foreground hover:no-underline">
                   {item.question}
                 </AccordionTrigger>
@@ -161,7 +176,7 @@ const HowItWorks = () => {
           </Accordion>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 
