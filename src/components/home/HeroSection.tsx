@@ -80,15 +80,15 @@ export function HeroSection() {
                 </div>
 
                 {/* Match score - prominent display */}
-                <div className="flex items-center justify-between p-3 sm:p-4 bg-gradient-to-r from-emerald-50 to-emerald-100/50 rounded-xl border border-emerald-200/50">
+                <div className="flex items-center p-3 sm:p-4 bg-gradient-to-r from-emerald-50 to-emerald-100/50 rounded-xl border border-emerald-200/50">
                   <div className="flex items-center gap-3 sm:gap-4">
-                    <div className="relative">
-                      <svg className="w-12 h-12 sm:w-16 sm:h-16 -rotate-90">
-                        <circle cx="50%" cy="50%" r="40%" fill="none" stroke="#e5e7eb" strokeWidth="4" />
-                        <circle cx="50%" cy="50%" r="40%" fill="none" stroke="#10b981" strokeWidth="4" strokeDasharray="176" strokeDashoffset="28" strokeLinecap="round" />
+                    <div className="relative w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0">
+                      <svg viewBox="0 0 48 48" className="w-full h-full -rotate-90">
+                        <circle cx="24" cy="24" r="20" fill="none" stroke="#e5e7eb" strokeWidth="4" />
+                        <circle cx="24" cy="24" r="20" fill="none" stroke="#10b981" strokeWidth="4" strokeDasharray="126" strokeDashoffset="20" strokeLinecap="round" />
                       </svg>
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-base sm:text-xl font-bold text-foreground">84%</span>
+                        <span className="text-sm sm:text-lg font-bold text-foreground">84%</span>
                       </div>
                     </div>
                     <div>
