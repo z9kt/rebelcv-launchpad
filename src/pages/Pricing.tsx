@@ -90,12 +90,12 @@ const Pricing = () => {
       </section>
 
       {/* Pricing Cards */}
-      <div className="grid md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {plans.map((plan, index) => (
           <div
             key={index}
-            className={`section-block p-8 relative ${
-              plan.popular ? "ring-2 ring-violet-500/30" : ""
+            className={`section-block p-6 md:p-8 relative ${
+              plan.popular ? "ring-2 ring-violet-500/30 order-first md:order-none" : ""
             }`}
           >
             {plan.popular && (
@@ -106,19 +106,19 @@ const Pricing = () => {
               </div>
             )}
 
-            <div className="mb-6">
-              <h3 className="text-xl font-semibold text-foreground">{plan.name}</h3>
+            <div className="mb-4 md:mb-6">
+              <h3 className="text-lg md:text-xl font-semibold text-foreground">{plan.name}</h3>
               <p className="text-muted-foreground text-sm">{plan.description}</p>
             </div>
 
-            <div className="mb-6">
-              <span className="text-4xl font-bold text-foreground">{plan.price}</span>
+            <div className="mb-4 md:mb-6">
+              <span className="text-3xl md:text-4xl font-bold text-foreground">{plan.price}</span>
               <span className="text-muted-foreground ml-2">{plan.period}</span>
             </div>
 
-            <ul className="space-y-3 mb-8">
+            <ul className="space-y-2 md:space-y-3 mb-6 md:mb-8">
               {plan.features.map((feature, i) => (
-                <li key={i} className="flex items-start gap-3 text-muted-foreground text-sm">
+                <li key={i} className="flex items-start gap-2 md:gap-3 text-muted-foreground text-sm">
                   <Check size={16} weight="bold" className="text-emerald-500 mt-0.5 flex-shrink-0" />
                   {feature}
                 </li>

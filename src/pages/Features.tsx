@@ -67,37 +67,37 @@ const Features = () => {
 
       {/* Apple-style Grid */}
       <section className="px-4 md:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
           {modules.map((module, index) => (
             <div 
               key={index} 
               className="flex flex-col items-center text-center group"
             >
               {/* Icon card */}
-              <div className={`w-full aspect-square rounded-3xl ${module.color} flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300`}>
-                <div className="scale-150">
+              <div className={`w-full aspect-square rounded-2xl md:rounded-3xl ${module.color} flex items-center justify-center mb-3 md:mb-5 group-hover:scale-105 transition-transform duration-300`}>
+                <div className="scale-110 md:scale-150">
                   {module.icon}
                 </div>
               </div>
               
               {/* Content */}
-              <p className="text-xs text-muted-foreground mb-1">{module.tagline}</p>
-              <h3 className="text-base font-semibold text-foreground mb-2">{module.title}</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed mb-4 px-1">
+              <p className="text-xs text-muted-foreground mb-1 hidden sm:block">{module.tagline}</p>
+              <h3 className="text-sm md:text-base font-semibold text-foreground mb-1 md:mb-2">{module.title}</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-3 md:mb-4 px-1 line-clamp-2 md:line-clamp-none">
                 {module.description}
               </p>
               
               {/* Actions */}
-              <div className="flex items-center gap-3 text-xs">
+              <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-xs">
                 <Link 
                   to="/app-demo" 
-                  className="px-4 py-1.5 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
+                  className="px-3 md:px-4 py-1.5 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
                 >
                   Läs mer
                 </Link>
                 <Link 
                   to="/priser" 
-                  className="text-primary font-medium hover:underline"
+                  className="text-primary font-medium hover:underline hidden sm:block"
                 >
                   Testa →
                 </Link>

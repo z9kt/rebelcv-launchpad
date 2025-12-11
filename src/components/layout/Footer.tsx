@@ -27,11 +27,11 @@ export function Footer() {
         <div className="glow-blur glow-blur-violet w-96 h-96 -top-48 -left-48" />
         <div className="glow-blur glow-blur-primary w-96 h-96 -top-48 -right-48" />
         
-        <div className="container-main py-20 text-center relative z-10">
-          <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-3">
+        <div className="container-main py-12 md:py-20 text-center relative z-10 px-4">
+          <h2 className="text-2xl md:text-4xl font-semibold text-foreground mb-3">
             Redo att göra upp med ditt gamla CV?
           </h2>
-          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+          <p className="text-sm md:text-base text-muted-foreground mb-6 md:mb-8 max-w-xl mx-auto">
             Sluta anpassa samma dokument om och om igen. Låt RebelCV göra jobbet åt dig.
           </p>
           <Link to="/logga-in" className="btn-primary">
@@ -42,10 +42,10 @@ export function Footer() {
 
       {/* Links Section */}
       <div className="border-t border-border bg-background">
-        <div className="container-main py-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="container-main py-10 md:py-16 px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {/* Brand */}
-            <div className="col-span-2 md:col-span-1">
+            <div className="col-span-2 md:col-span-1 order-last md:order-first mt-6 md:mt-0 pt-6 md:pt-0 border-t md:border-t-0 border-border">
               <p className="text-sm text-muted-foreground leading-relaxed">
                 RebelCV kombinerar AI med smart karriärstrategi för att skapa CV:n och personliga brev som sticker ut.
               </p>
