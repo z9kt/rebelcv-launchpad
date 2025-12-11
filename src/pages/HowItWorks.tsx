@@ -74,7 +74,7 @@ const HowItWorks = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-background">
         <div className="container-main text-center">
-          <span className="label-text mb-4 block text-primary">Process</span>
+          <span className="label-text mb-4 block text-muted-foreground">Process</span>
           <h1 className="heading-lg mb-6">Så funkar RebelCV</h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Från jobbannons till färdigt ansökningspaket på några minuter. 
@@ -88,7 +88,7 @@ const HowItWorks = () => {
         <div className="container-main">
           <div className="relative">
             {/* Vertical connector line */}
-            <div className="absolute left-8 md:left-12 top-0 bottom-0 w-px bg-gradient-to-b from-primary/20 via-primary/40 to-primary/20 hidden md:block" />
+            <div className="absolute left-8 md:left-12 top-0 bottom-0 w-0.5 bg-gradient-to-b from-slate-300 via-slate-400 to-slate-300 hidden md:block" />
             
             <div className="space-y-8 md:space-y-12">
               {steps.map((step, index) => (
@@ -97,8 +97,8 @@ const HowItWorks = () => {
                   <div className="bg-background rounded-3xl p-8 md:p-12 shadow-sm hover:shadow-lg transition-all duration-300 md:ml-20 border border-border/30">
                     {/* Step number - positioned to overlap the connector line */}
                     <div className="absolute left-0 md:left-0 top-8 md:top-12">
-                      <div className="w-16 h-16 md:w-24 md:h-24 rounded-full bg-background shadow-lg flex items-center justify-center border-2 border-primary/20">
-                        <span className="font-script text-3xl md:text-5xl text-primary font-semibold">
+                      <div className="w-16 h-16 md:w-24 md:h-24 rounded-full bg-background shadow-lg flex items-center justify-center border-2 border-slate-200">
+                        <span className="text-2xl md:text-4xl text-foreground font-bold">
                           {step.number}
                         </span>
                       </div>
@@ -108,10 +108,10 @@ const HowItWorks = () => {
                     <div className="md:pl-8">
                       {/* Header */}
                       <div className="mb-8">
-                        <span className="text-xs uppercase tracking-widest text-primary/60 mb-2 block">
+                        <span className="text-xs uppercase tracking-widest text-muted-foreground mb-2 block">
                           Steg {step.number}
                         </span>
-                        <h2 className="font-script text-3xl md:text-4xl text-foreground mb-3">
+                        <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-3">
                           {step.title}
                         </h2>
                         <p className="text-muted-foreground text-lg max-w-2xl">
@@ -142,19 +142,19 @@ const HowItWorks = () => {
                         </div>
 
                         {/* AI column */}
-                        <div className="bg-primary/5 rounded-2xl p-6 border border-primary/10">
+                        <div className="bg-slate-100 rounded-2xl p-6 border border-slate-200">
                           <div className="flex items-center gap-3 mb-4">
-                            <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                              <span className="text-sm font-medium text-primary">AI</span>
+                            <div className="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center">
+                              <span className="text-sm font-medium text-slate-600">AI</span>
                             </div>
-                            <h3 className="text-sm font-semibold uppercase tracking-wider text-primary/70">
+                            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-500">
                               Vad AI gör
                             </h3>
                           </div>
                           <ul className="space-y-3">
                             {step.aiActions.map((action, i) => (
                               <li key={i} className="flex items-start gap-3">
-                                <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                                <span className="w-1.5 h-1.5 rounded-full bg-slate-500 mt-2 flex-shrink-0" />
                                 <span className="text-foreground">{action}</span>
                               </li>
                             ))}
@@ -174,7 +174,7 @@ const HowItWorks = () => {
       <section className="py-16 md:py-24 bg-background">
         <div className="container-main max-w-3xl">
           <div className="text-center mb-12">
-            <span className="label-text mb-4 block text-primary">Vanliga frågor</span>
+            <span className="label-text mb-4 block text-muted-foreground">Vanliga frågor</span>
             <h2 className="heading-md">Snabba svar</h2>
           </div>
 
