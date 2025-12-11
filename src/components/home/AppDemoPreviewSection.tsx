@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Play } from "lucide-react";
+import { Play } from "@phosphor-icons/react";
 
 export function AppDemoPreviewSection() {
   return (
@@ -14,7 +14,7 @@ export function AppDemoPreviewSection() {
         <div className="relative aspect-video max-w-4xl mx-auto rounded-2xl overflow-hidden mb-8 bg-white/5 border border-white/10">
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center cursor-pointer hover:scale-110 transition-transform shadow-xl">
-              <Play size={32} className="text-foreground ml-1" fill="currentColor" />
+              <Play size={32} weight="fill" className="text-foreground ml-1" />
             </div>
           </div>
         </div>

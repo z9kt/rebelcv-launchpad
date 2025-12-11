@@ -1,4 +1,4 @@
-import { User, Search, FileCheck, HelpCircle } from "lucide-react";
+import { UserCircle, MagnifyingGlass, CheckSquare, Question } from "@phosphor-icons/react";
 import {
   Accordion,
   AccordionContent,
@@ -8,7 +8,7 @@ import {
 
 const steps = [
   {
-    icon: <User size={28} />,
+    icon: <UserCircle size={28} weight="duotone" />,
     title: "1. Bygg din profil",
     color: "emerald",
     userActions: [
@@ -24,7 +24,7 @@ const steps = [
     ],
   },
   {
-    icon: <Search size={28} />,
+    icon: <MagnifyingGlass size={28} weight="duotone" />,
     title: "2. Skanna jobb",
     color: "violet",
     userActions: [
@@ -40,7 +40,7 @@ const steps = [
     ],
   },
   {
-    icon: <FileCheck size={28} />,
+    icon: <CheckSquare size={28} weight="duotone" />,
     title: "3. Skapa jobbpaket",
     color: "blue",
     userActions: [
@@ -157,7 +157,7 @@ const HowItWorks = () => {
         <div className="container-main max-w-3xl">
           <div className="flex items-center gap-3 mb-8">
             <div className="w-12 h-12 rounded-2xl bg-violet-50 flex items-center justify-center text-violet-600">
-              <HelpCircle size={24} />
+              <Question size={24} weight="duotone" />
             </div>
             <h2 className="text-2xl font-semibold text-foreground">Vanliga frågor om processen</h2>
           </div>

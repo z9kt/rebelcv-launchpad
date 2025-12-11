@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Check, Sparkles, FileText, Download, CheckCircle2, AlertCircle } from "lucide-react";
+import { Check, Sparkle, FileText, DownloadSimple, CheckCircle, WarningCircle } from "@phosphor-icons/react";
 
 const features = [
   { text: "AI-optimerat CV och personligt brev" },
@@ -38,7 +38,7 @@ export function HeroSection() {
               {features.map((feature, index) => (
                 <li key={index} className="flex items-center gap-3 text-muted-foreground">
                   <div className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0">
-                    <Check size={12} className="text-white" />
+                    <Check size={12} weight="bold" className="text-white" />
                   </div>
                   <span className="text-sm">{feature.text}</span>
                 </li>
@@ -103,7 +103,7 @@ export function HeroSection() {
                   {/* AI Suggestions */}
                   <div className="space-y-3">
                     <div className="flex items-center gap-2">
-                      <Sparkles size={14} className="text-violet-500" />
+                      <Sparkle size={14} weight="duotone" className="text-violet-500" />
                       <span className="text-xs font-semibold text-foreground uppercase tracking-wide">AI-förslag</span>
                     </div>
                     <div className="space-y-2 text-sm">
@@ -121,24 +121,24 @@ export function HeroSection() {
                   {/* Analysis */}
                   <div className="space-y-3">
                     <div className="flex items-center gap-2">
-                      <CheckCircle2 size={14} className="text-emerald-500" />
+                      <CheckCircle size={14} weight="duotone" className="text-emerald-500" />
                       <span className="text-xs font-semibold text-foreground uppercase tracking-wide">Analys</span>
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center gap-2 text-xs">
-                        <CheckCircle2 size={12} className="text-emerald-500" />
+                        <CheckCircle size={12} weight="fill" className="text-emerald-500" />
                         <span className="text-foreground">7+ års ledarerfarenhet</span>
                       </div>
                       <div className="flex items-center gap-2 text-xs">
-                        <CheckCircle2 size={12} className="text-emerald-500" />
+                        <CheckCircle size={12} weight="fill" className="text-emerald-500" />
                         <span className="text-foreground">Agila metoder bekräftat</span>
                       </div>
                       <div className="flex items-center gap-2 text-xs">
-                        <CheckCircle2 size={12} className="text-emerald-500" />
+                        <CheckCircle size={12} weight="fill" className="text-emerald-500" />
                         <span className="text-foreground">Budgetansvar matchar</span>
                       </div>
                       <div className="flex items-center gap-2 text-xs">
-                        <AlertCircle size={12} className="text-amber-500" />
+                        <WarningCircle size={12} weight="fill" className="text-amber-500" />
                         <span className="text-muted-foreground">Saknar: Scrum-certifiering</span>
                       </div>
                     </div>
@@ -148,7 +148,7 @@ export function HeroSection() {
                 {/* Cover letter preview */}
                 <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
                   <div className="flex items-center gap-2 mb-3">
-                    <FileText size={14} className="text-slate-500" />
+                    <FileText size={14} weight="duotone" className="text-slate-500" />
                     <span className="text-xs font-semibold text-foreground uppercase tracking-wide">Personligt brev</span>
                     <span className="ml-auto text-xs text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">Genererat</span>
                   </div>
@@ -161,7 +161,7 @@ export function HeroSection() {
                 <div className="flex items-center justify-between p-4 bg-foreground rounded-xl">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
-                      <FileText size={18} className="text-white" />
+                      <FileText size={18} weight="duotone" className="text-white" />
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-white">CV_Senior_Projektledare.pdf</p>
@@ -169,7 +169,7 @@ export function HeroSection() {
                     </div>
                   </div>
                   <button className="flex items-center gap-2 px-4 py-2 bg-white text-foreground text-sm font-medium rounded-lg hover:bg-white/90 transition-colors">
-                    <Download size={14} />
+                    <DownloadSimple size={14} weight="bold" />
                     Ladda ner
                   </button>
                 </div>
