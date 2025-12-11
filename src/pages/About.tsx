@@ -1,4 +1,4 @@
-import { Eye, Compass, Rocket, Lightbulb, Code, Users, Lightning, CheckCircle } from "@phosphor-icons/react";
+import { Eye, Compass, Rocket } from "@phosphor-icons/react";
 
 const pillars = [
   { icon: <Eye size={28} weight="duotone" />, title: "Transparens", description: "Du ska alltid veta vad AI:n gör och varför.", color: "blue" },
@@ -8,32 +8,29 @@ const pillars = [
 
 const timeline = [
   { 
-    icon: <Lightbulb size={24} weight="duotone" />, 
     title: "Idén föds", 
     date: "Aug 2025", 
     description: "Frustrationen över att anpassa samma CV ledde till en fråga: varför kan inte detta automatiseras?",
-    status: "completed"
+    completed: true
   },
   { 
-    icon: <Code size={24} weight="duotone" />, 
-    title: "Första prototypen", 
+    title: "Prototypen", 
     date: "Sep 2025", 
     description: "En första AI-driven matcher byggdes för att testa konceptet.",
-    status: "completed"
+    completed: true
   },
   { 
-    icon: <Users size={24} weight="duotone" />, 
     title: "Betatest", 
     date: "Okt 2025", 
     description: "Tidiga användare testade plattformen och gav ovärderlig feedback.",
-    status: "completed"
+    completed: true
   },
   { 
-    icon: <Lightning size={24} weight="duotone" />, 
     title: "Lansering", 
     date: "Dec 2025", 
     description: "RebelCV lanseras för allmänheten med full funktionalitet.",
-    status: "current"
+    completed: false,
+    current: true
   },
 ];
 
@@ -71,88 +68,90 @@ const About = () => {
       </div>
 
       {/* Roadmap Section */}
-      <section className="section-block py-16 md:py-24 overflow-hidden">
-        <div className="container-main max-w-4xl">
+      <section className="section-block py-20 md:py-28">
+        <div className="container-main">
           <div className="text-center mb-16">
             <span className="label-text mb-4 block">Roadmap</span>
             <h2 className="text-3xl font-semibold text-foreground">Vår resa</h2>
           </div>
           
-          {/* Timeline */}
-          <div className="relative">
-            {/* Vertical line */}
-            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-violet-200 via-violet-400 to-violet-200 md:-translate-x-px" />
-            
-            {/* Decorative dots pattern */}
-            <div className="absolute left-4 md:left-1/2 md:-translate-x-20 top-10 w-40 h-40 opacity-10">
-              <div className="grid grid-cols-5 gap-3">
-                {[...Array(25)].map((_, i) => (
-                  <div key={i} className="w-1.5 h-1.5 rounded-full bg-violet-600" />
+          {/* Desktop: Horizontal Timeline */}
+          <div className="hidden md:block">
+            <div className="relative">
+              {/* Horizontal line */}
+              <div className="absolute top-6 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-300 to-transparent" />
+              
+              <div className="grid grid-cols-4 gap-8">
+                {timeline.map((item, index) => (
+                  <div key={index} className="relative text-center group">
+                    {/* Dot */}
+                    <div className={`relative z-10 w-3 h-3 mx-auto rounded-full transition-all duration-300 ${
+                      item.current 
+                        ? 'bg-violet-500 ring-4 ring-violet-200 scale-125' 
+                        : item.completed 
+                          ? 'bg-violet-400 group-hover:scale-110' 
+                          : 'bg-muted-foreground/30'
+                    }`}>
+                      {item.current && (
+                        <div className="absolute inset-0 rounded-full bg-violet-500 animate-ping opacity-30" />
+                      )}
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="mt-8 px-2">
+                      <span className="text-xs font-medium text-muted-foreground/70 uppercase tracking-wider">
+                        {item.date}
+                      </span>
+                      <h3 className="font-script text-3xl md:text-4xl text-foreground mt-2 mb-3 transition-colors group-hover:text-violet-600">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
-            
-            <div className="space-y-8 md:space-y-0">
-              {timeline.map((item, index) => (
-                <div 
-                  key={index} 
-                  className={`relative flex items-start gap-6 md:gap-0 ${
-                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                  }`}
-                >
-                  {/* Content card */}
-                  <div className={`flex-1 pl-16 md:pl-0 ${index % 2 === 0 ? 'md:pr-16 md:text-right' : 'md:pl-16 md:text-left'}`}>
-                    <div className={`group relative bg-background rounded-2xl p-6 border border-border/50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ${
-                      item.status === 'current' ? 'ring-2 ring-violet-500/20' : ''
+          </div>
+
+          {/* Mobile: Vertical Timeline */}
+          <div className="md:hidden">
+            <div className="relative pl-8">
+              {/* Vertical line */}
+              <div className="absolute left-[5px] top-2 bottom-2 w-px bg-gradient-to-b from-violet-300 via-violet-400 to-violet-200" />
+              
+              <div className="space-y-12">
+                {timeline.map((item, index) => (
+                  <div key={index} className="relative group">
+                    {/* Dot */}
+                    <div className={`absolute -left-8 top-1 w-3 h-3 rounded-full transition-all duration-300 ${
+                      item.current 
+                        ? 'bg-violet-500 ring-4 ring-violet-200 scale-125' 
+                        : item.completed 
+                          ? 'bg-violet-400' 
+                          : 'bg-muted-foreground/30'
                     }`}>
-                      {/* Glow effect for current item */}
-                      {item.status === 'current' && (
-                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-violet-500/5 to-transparent pointer-events-none" />
+                      {item.current && (
+                        <div className="absolute inset-0 rounded-full bg-violet-500 animate-ping opacity-30" />
                       )}
-                      
-                      <div className={`flex items-center gap-3 mb-3 ${index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}`}>
-                        <span className={`inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full ${
-                          item.status === 'current' 
-                            ? 'bg-violet-100 text-violet-700' 
-                            : 'bg-emerald-100 text-emerald-700'
-                        }`}>
-                          {item.status === 'completed' && <CheckCircle size={12} weight="fill" />}
-                          {item.date}
-                        </span>
-                      </div>
-                      
-                      <h3 className="text-xl font-semibold text-foreground mb-2">{item.title}</h3>
-                      <p className="text-muted-foreground leading-relaxed">{item.description}</p>
-                      
-                      {/* Connector line to center */}
-                      <div className={`hidden md:block absolute top-1/2 w-8 h-px bg-gradient-to-r ${
-                        index % 2 === 0 
-                          ? 'right-0 translate-x-full from-border/50 to-violet-400' 
-                          : 'left-0 -translate-x-full from-violet-400 to-border/50'
-                      }`} />
+                    </div>
+                    
+                    {/* Content */}
+                    <div>
+                      <span className="text-xs font-medium text-muted-foreground/70 uppercase tracking-wider">
+                        {item.date}
+                      </span>
+                      <h3 className="font-script text-3xl text-foreground mt-1 mb-2">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {item.description}
+                      </p>
                     </div>
                   </div>
-                  
-                  {/* Center icon */}
-                  <div className="absolute left-8 md:left-1/2 md:-translate-x-1/2 -translate-x-1/2 z-10">
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ${
-                      item.status === 'current'
-                        ? 'bg-gradient-to-br from-violet-500 to-violet-600 text-white shadow-violet-500/30'
-                        : 'bg-white border-2 border-violet-200 text-violet-600'
-                    }`}>
-                      {item.icon}
-                    </div>
-                  </div>
-                  
-                  {/* Empty space for alternating layout */}
-                  <div className="hidden md:block flex-1" />
-                </div>
-              ))}
-            </div>
-            
-            {/* Bottom decorative element */}
-            <div className="absolute left-8 md:left-1/2 bottom-0 -translate-x-1/2 md:-translate-x-1/2">
-              <div className="w-4 h-4 rounded-full bg-gradient-to-br from-violet-400 to-violet-600 shadow-lg shadow-violet-500/30" />
+                ))}
+              </div>
             </div>
           </div>
         </div>
