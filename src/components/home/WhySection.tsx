@@ -1,20 +1,20 @@
-import { RefreshCw, Brain, Layers } from "lucide-react";
+import { ArrowsClockwise, Brain, Stack } from "@phosphor-icons/react";
 
 const features = [
   {
-    icon: <RefreshCw size={32} className="text-emerald-600" />,
+    icon: <ArrowsClockwise size={32} weight="duotone" className="text-emerald-600" />,
     title: "Levande CV",
     description: "CV:t uppdateras automatiskt när du ändrar din profil eller skapar nya ansökningar.",
     color: "emerald",
   },
   {
-    icon: <Brain size={32} className="text-violet-600" />,
+    icon: <Brain size={32} weight="duotone" className="text-violet-600" />,
     title: "AI som tolkar kraven",
     description: "Systemet läser jobbannonsen, räknar ut matchningsprocent och lyfter fram dina styrkor.",
     color: "violet",
   },
   {
-    icon: <Layers size={32} className="text-blue-600" />,
+    icon: <Stack size={32} weight="duotone" className="text-blue-600" />,
     title: "Allt samlat",
     description: "Ansökningar, CV-versioner, personliga brev och analyser samlade i samma vy.",
     color: "blue",

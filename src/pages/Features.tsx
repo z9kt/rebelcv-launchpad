@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { LayoutDashboard, Search, FileText, PenTool, TrendingUp, History, ArrowRight } from "lucide-react";
+import { SquaresFour, MagnifyingGlass, FileText, PencilLine, TrendUp, ClockCounterClockwise, ArrowRight } from "@phosphor-icons/react";
 
 const modules = [
   {
-    icon: <LayoutDashboard size={28} />,
+    icon: <SquaresFour size={28} weight="duotone" />,
     title: "Dashboard",
     description: "Din centrala utgångspunkt",
     color: "blue",
@@ -15,7 +15,7 @@ const modules = [
     ],
   },
   {
-    icon: <Search size={28} />,
+    icon: <MagnifyingGlass size={28} weight="duotone" />,
     title: "Jobbskanning",
     description: "Analysera vilken annons som helst",
     color: "violet",
@@ -27,7 +27,7 @@ const modules = [
     ],
   },
   {
-    icon: <FileText size={28} />,
+    icon: <FileText size={28} weight="duotone" />,
     title: "Jobbanpassat CV",
     description: "Skräddarsytt för varje tjänst",
     color: "emerald",
@@ -39,7 +39,7 @@ const modules = [
     ],
   },
   {
-    icon: <PenTool size={28} />,
+    icon: <PencilLine size={28} weight="duotone" />,
     title: "Personligt brev",
     description: "Övertyga på rätt sätt",
     color: "blue",
@@ -51,7 +51,7 @@ const modules = [
     ],
   },
   {
-    icon: <TrendingUp size={28} />,
+    icon: <TrendUp size={28} weight="duotone" />,
     title: "Karriäranalys",
     description: "Insikter och rekommendationer",
     color: "violet",
@@ -63,7 +63,7 @@ const modules = [
     ],
   },
   {
-    icon: <History size={28} />,
+    icon: <ClockCounterClockwise size={28} weight="duotone" />,
     title: "Historik & paket",
     description: "Allt samlat på ett ställe",
     color: "emerald",
@@ -100,11 +100,11 @@ const Features = () => {
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-2">
             {flowSteps.map((step, index) => (
               <div key={step} className="flex items-center gap-2 md:gap-4">
-                <div className="px-5 py-2.5 rounded-full bg-blue-50 border border-blue-100">
-                  <span className="text-sm font-medium text-blue-600">{step}</span>
+                <div className="px-5 py-2.5 rounded-full bg-violet-50 border border-violet-100">
+                  <span className="text-sm font-medium text-violet-600">{step}</span>
                 </div>
                 {index < flowSteps.length - 1 && (
-                  <ArrowRight size={16} className="text-muted-foreground hidden md:block" />
+                  <ArrowRight size={16} weight="bold" className="text-muted-foreground hidden md:block" />
                 )}
               </div>
             ))}
@@ -115,12 +115,10 @@ const Features = () => {
       {/* Modules Grid */}
       <div className="grid md:grid-cols-2 gap-4">
         {modules.map((module, index) => (
-          <div key={index} className={`section-block p-8 md:p-10 ${
-            module.color === "blue" ? "block-gradient-blue" : ""
-          }`}>
+          <div key={index} className="section-block p-8 md:p-10 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
             <div className="flex items-start gap-4 mb-6">
               <div className={`w-14 h-14 rounded-2xl flex items-center justify-center ${
-                module.color === "blue" ? "bg-white shadow-sm text-blue-600" :
+                module.color === "blue" ? "bg-blue-50 text-blue-600" :
                 module.color === "violet" ? "bg-violet-50 text-violet-600" :
                 "bg-emerald-50 text-emerald-600"
               }`}>
@@ -144,7 +142,7 @@ const Features = () => {
               ))}
             </ul>
 
-            <Link to="/app-demo" className="text-blue-600 text-sm font-medium hover:underline">
+            <Link to="/app-demo" className="text-violet-600 text-sm font-medium hover:underline">
               Se i action →
             </Link>
           </div>

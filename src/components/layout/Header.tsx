@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { List, X } from "@phosphor-icons/react";
 
 const navLinks = [
   { to: "/hur-det-funkar", label: "Hur det funkar" },
@@ -59,7 +59,7 @@ export function Header() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 text-foreground"
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={24} weight="bold" /> : <List size={24} weight="bold" />}
           </button>
         </div>
       </div>

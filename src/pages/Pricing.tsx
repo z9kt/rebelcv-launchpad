@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Check, HelpCircle } from "lucide-react";
+import { Check, Question } from "@phosphor-icons/react";
 import {
   Accordion,
   AccordionContent,
@@ -95,12 +95,12 @@ const Pricing = () => {
           <div
             key={index}
             className={`section-block p-8 relative ${
-              plan.popular ? "ring-2 ring-blue-500/30" : ""
+              plan.popular ? "ring-2 ring-violet-500/30" : ""
             }`}
           >
             {plan.popular && (
               <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                <span className="px-4 py-1.5 text-xs font-semibold text-white bg-blue-600 rounded-full shadow-lg">
+                <span className="px-4 py-1.5 text-xs font-semibold text-white bg-violet-600 rounded-full shadow-lg">
                   Populärast
                 </span>
               </div>
@@ -119,7 +119,7 @@ const Pricing = () => {
             <ul className="space-y-3 mb-8">
               {plan.features.map((feature, i) => (
                 <li key={i} className="flex items-start gap-3 text-muted-foreground text-sm">
-                  <Check size={16} className="text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <Check size={16} weight="bold" className="text-emerald-500 mt-0.5 flex-shrink-0" />
                   {feature}
                 </li>
               ))}
@@ -139,8 +139,8 @@ const Pricing = () => {
       <section className="section-block block-gradient-blue py-16 md:py-24">
         <div className="container-main max-w-3xl">
           <div className="flex items-center gap-3 mb-8">
-            <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-blue-600">
-              <HelpCircle size={24} />
+            <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-violet-600">
+              <Question size={24} weight="duotone" />
             </div>
             <h2 className="text-2xl font-semibold text-foreground">Frågor om priser</h2>
           </div>
