@@ -54,15 +54,15 @@ const About = () => {
         </div>
       </section>
 
-      <div className="grid md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {pillars.map((pillar, index) => (
-          <div key={index} className="section-block p-8 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-            <div className={`w-14 h-14 rounded-2xl mx-auto mb-6 flex items-center justify-center ${
+          <div key={index} className="section-block p-6 md:p-8 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl mx-auto mb-4 md:mb-6 flex items-center justify-center ${
               pillar.color === "blue" ? "bg-blue-50 text-blue-600" :
               pillar.color === "violet" ? "bg-violet-50 text-violet-600" : "bg-emerald-50 text-emerald-600"
             }`}>{pillar.icon}</div>
-            <h3 className="text-xl font-semibold text-foreground mb-3">{pillar.title}</h3>
-            <p className="text-muted-foreground">{pillar.description}</p>
+            <h3 className="text-lg md:text-xl font-semibold text-foreground mb-2 md:mb-3">{pillar.title}</h3>
+            <p className="text-sm md:text-base text-muted-foreground">{pillar.description}</p>
           </div>
         ))}
       </div>

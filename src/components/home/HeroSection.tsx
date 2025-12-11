@@ -68,50 +68,50 @@ export function HeroSection() {
               </div>
 
               {/* App content */}
-              <div className="p-6 space-y-5 bg-card">
+              <div className="p-4 sm:p-6 space-y-4 sm:space-y-5 bg-card">
                 {/* Job input section */}
-                <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-xl border border-border">
-                  <div className="flex-1 text-sm text-foreground truncate">
-                    linkedin.com/jobs/senior-projektledare-techcorp
+                <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-muted/50 rounded-xl border border-border">
+                  <div className="flex-1 text-xs sm:text-sm text-foreground truncate">
+                    linkedin.com/jobs/senior-projektledare
                   </div>
-                  <div className="px-3 py-1.5 bg-emerald-500 text-white text-xs font-medium rounded-lg">
+                  <div className="px-2 sm:px-3 py-1 sm:py-1.5 bg-emerald-500 text-white text-xs font-medium rounded-lg whitespace-nowrap">
                     Analyserad
                   </div>
                 </div>
 
                 {/* Match score - prominent display */}
-                <div className="flex items-center justify-between p-4 bg-gradient-to-r from-emerald-50 to-emerald-100/50 rounded-xl border border-emerald-200/50">
-                  <div className="flex items-center gap-4">
+                <div className="flex items-center justify-between p-3 sm:p-4 bg-gradient-to-r from-emerald-50 to-emerald-100/50 rounded-xl border border-emerald-200/50">
+                  <div className="flex items-center gap-3 sm:gap-4">
                     <div className="relative">
-                      <svg className="w-16 h-16 -rotate-90">
-                        <circle cx="32" cy="32" r="28" fill="none" stroke="#e5e7eb" strokeWidth="4" />
-                        <circle cx="32" cy="32" r="28" fill="none" stroke="#10b981" strokeWidth="4" strokeDasharray="176" strokeDashoffset="28" strokeLinecap="round" />
+                      <svg className="w-12 h-12 sm:w-16 sm:h-16 -rotate-90">
+                        <circle cx="50%" cy="50%" r="40%" fill="none" stroke="#e5e7eb" strokeWidth="4" />
+                        <circle cx="50%" cy="50%" r="40%" fill="none" stroke="#10b981" strokeWidth="4" strokeDasharray="176" strokeDashoffset="28" strokeLinecap="round" />
                       </svg>
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-xl font-bold text-foreground">84%</span>
+                        <span className="text-base sm:text-xl font-bold text-foreground">84%</span>
                       </div>
                     </div>
                     <div>
-                      <p className="font-semibold text-foreground">Stark matchning</p>
-                      <p className="text-sm text-muted-foreground">Senior Projektledare</p>
+                      <p className="font-semibold text-foreground text-sm sm:text-base">Stark matchning</p>
+                      <p className="text-xs sm:text-sm text-muted-foreground">Senior Projektledare</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Two column layout */}
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   {/* AI Suggestions */}
-                  <div className="space-y-3">
+                  <div className="space-y-2 sm:space-y-3">
                     <div className="flex items-center gap-2">
                       <Sparkle size={14} weight="duotone" className="text-violet-500" />
                       <span className="text-xs font-semibold text-foreground uppercase tracking-wide">AI-förslag</span>
                     </div>
                     <div className="space-y-2 text-sm">
-                      <div className="p-2.5 bg-muted/50 rounded-lg border border-border">
+                      <div className="p-2 sm:p-2.5 bg-muted/50 rounded-lg border border-border">
                         <p className="text-muted-foreground text-xs mb-1">Din titel:</p>
-                        <p className="text-foreground font-medium text-xs">"Projektledare" → <span className="text-violet-600">"IT-projektledare med agil expertis"</span></p>
+                        <p className="text-foreground font-medium text-xs">"Projektledare" → <span className="text-violet-600">"IT-projektledare"</span></p>
                       </div>
-                      <div className="p-2.5 bg-muted/50 rounded-lg border border-border">
+                      <div className="p-2 sm:p-2.5 bg-muted/50 rounded-lg border border-border hidden sm:block">
                         <p className="text-muted-foreground text-xs mb-1">Din erfarenhet:</p>
                         <p className="text-foreground font-medium text-xs">"Ledde team" → <span className="text-violet-600">"Coachade tvärfunktionella team"</span></p>
                       </div>
@@ -119,26 +119,26 @@ export function HeroSection() {
                   </div>
 
                   {/* Analysis */}
-                  <div className="space-y-3">
+                  <div className="space-y-2 sm:space-y-3">
                     <div className="flex items-center gap-2">
                       <CheckCircle size={14} weight="duotone" className="text-emerald-500" />
                       <span className="text-xs font-semibold text-foreground uppercase tracking-wide">Analys</span>
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-1.5 sm:space-y-2">
                       <div className="flex items-center gap-2 text-xs">
-                        <CheckCircle size={12} weight="fill" className="text-emerald-500" />
+                        <CheckCircle size={12} weight="fill" className="text-emerald-500 flex-shrink-0" />
                         <span className="text-foreground">7+ års ledarerfarenhet</span>
                       </div>
                       <div className="flex items-center gap-2 text-xs">
-                        <CheckCircle size={12} weight="fill" className="text-emerald-500" />
+                        <CheckCircle size={12} weight="fill" className="text-emerald-500 flex-shrink-0" />
                         <span className="text-foreground">Agila metoder bekräftat</span>
                       </div>
-                      <div className="flex items-center gap-2 text-xs">
-                        <CheckCircle size={12} weight="fill" className="text-emerald-500" />
+                      <div className="flex items-center gap-2 text-xs hidden sm:flex">
+                        <CheckCircle size={12} weight="fill" className="text-emerald-500 flex-shrink-0" />
                         <span className="text-foreground">Budgetansvar matchar</span>
                       </div>
                       <div className="flex items-center gap-2 text-xs">
-                        <WarningCircle size={12} weight="fill" className="text-amber-500" />
+                        <WarningCircle size={12} weight="fill" className="text-amber-500 flex-shrink-0" />
                         <span className="text-muted-foreground">Saknar: Scrum-certifiering</span>
                       </div>
                     </div>
@@ -146,31 +146,31 @@ export function HeroSection() {
                 </div>
 
                 {/* Cover letter preview */}
-                <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                  <div className="flex items-center gap-2 mb-3">
+                <div className="p-3 sm:p-4 bg-slate-50 rounded-xl border border-slate-200">
+                  <div className="flex items-center gap-2 mb-2 sm:mb-3">
                     <FileText size={14} weight="duotone" className="text-slate-500" />
                     <span className="text-xs font-semibold text-foreground uppercase tracking-wide">Personligt brev</span>
                     <span className="ml-auto text-xs text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">Genererat</span>
                   </div>
-                  <p className="text-sm text-foreground leading-relaxed italic">
-                    "Med sju års erfarenhet av att leda komplexa IT-projekt och driva agila transformationer, ser jag tjänsten som Senior Projektledare hos TechCorp som ett naturligt nästa steg..."
+                  <p className="text-xs sm:text-sm text-foreground leading-relaxed italic line-clamp-2 sm:line-clamp-none">
+                    "Med sju års erfarenhet av att leda komplexa IT-projekt och driva agila transformationer..."
                   </p>
                 </div>
 
                 {/* Download CV button */}
-                <div className="flex items-center justify-between p-4 bg-foreground rounded-xl">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
-                      <FileText size={18} weight="duotone" className="text-white" />
+                <div className="flex items-center justify-between p-3 sm:p-4 bg-foreground rounded-xl gap-2">
+                  <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <FileText size={16} weight="duotone" className="text-white" />
                     </div>
-                    <div>
-                      <p className="text-sm font-semibold text-white">CV_Senior_Projektledare.pdf</p>
-                      <p className="text-xs text-white/60">Optimerat för TechCorp AB</p>
+                    <div className="min-w-0">
+                      <p className="text-xs sm:text-sm font-semibold text-white truncate">CV_Senior_Projektledare.pdf</p>
+                      <p className="text-xs text-white/60 truncate hidden sm:block">Optimerat för TechCorp AB</p>
                     </div>
                   </div>
-                  <button className="flex items-center gap-2 px-4 py-2 bg-white text-foreground text-sm font-medium rounded-lg hover:bg-white/90 transition-colors">
+                  <button className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-white text-foreground text-xs sm:text-sm font-medium rounded-lg hover:bg-white/90 transition-colors flex-shrink-0">
                     <DownloadSimple size={14} weight="bold" />
-                    Ladda ner
+                    <span className="hidden sm:inline">Ladda ner</span>
                   </button>
                 </div>
               </div>
