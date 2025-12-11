@@ -16,12 +16,12 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border">
-      <div className="container-main">
-        <div className="flex items-center justify-between h-16 md:h-20">
+      <div className="container-main px-4 md:px-6">
+        <div className="flex items-center justify-between h-14 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex flex-col">
-            <span className="text-xl font-semibold tracking-tight text-foreground">rebelcv</span>
-            <span className="text-xs text-muted-foreground -mt-0.5">AI-drivet levande CV</span>
+            <span className="text-lg md:text-xl font-semibold tracking-tight text-foreground">rebelcv</span>
+            <span className="text-[10px] md:text-xs text-muted-foreground -mt-0.5">AI-drivet levande CV</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -57,7 +57,8 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-foreground"
+            className="md:hidden p-2 text-foreground -mr-2"
+            aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X size={24} weight="bold" /> : <List size={24} weight="bold" />}
           </button>
@@ -66,14 +67,14 @@ export function Header() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-16 bg-background/98 backdrop-blur-xl z-40">
-          <nav className="flex flex-col p-6 space-y-6">
+        <div className="md:hidden fixed inset-0 top-14 bg-background z-40 overflow-y-auto">
+          <nav className="flex flex-col p-6 space-y-5">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`text-2xl font-semibold ${
+                className={`text-xl font-semibold ${
                   location.pathname === link.to
                     ? "text-foreground"
                     : "text-muted-foreground"
@@ -86,14 +87,14 @@ export function Header() {
               <Link
                 to="/logga-in"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block text-xl text-muted-foreground"
+                className="block text-lg text-muted-foreground"
               >
                 Logga in
               </Link>
               <Link
                 to="/logga-in"
                 onClick={() => setMobileMenuOpen(false)}
-                className="btn-primary inline-block"
+                className="btn-primary inline-block text-center"
               >
                 Kom igång gratis
               </Link>

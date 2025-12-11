@@ -78,16 +78,16 @@ const features = [
 
 export function WhySection() {
   return (
-    <div className="grid md:grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
       {features.map((feature, index) => (
         <div 
           key={index} 
-          className="section-block p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+          className="section-block p-5 md:p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
         >
-          <div className="mb-5 group-hover:scale-[1.02] transition-transform duration-300">
+          <div className="mb-4 md:mb-5 group-hover:scale-[1.02] transition-transform duration-300">
             {feature.visual}
           </div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">{feature.title}</h3>
+          <h3 className="text-base md:text-lg font-semibold text-foreground mb-1.5 md:mb-2">{feature.title}</h3>
           <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
         </div>
       ))}

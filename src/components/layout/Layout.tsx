@@ -9,7 +9,7 @@ export function Layout() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
-      <main className={`flex-1 pt-16 md:pt-20 ${isHomePage ? '' : 'p-4 md:p-6'}`}>
+      <main className={`flex-1 pt-14 md:pt-20 ${isHomePage ? '' : 'p-4 md:p-6'}`}>
         <Outlet />
       </main>
       <Footer />

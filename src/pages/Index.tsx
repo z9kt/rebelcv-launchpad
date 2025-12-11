@@ -7,7 +7,7 @@ import { BottomCTASection } from "@/components/home/BottomCTASection";
 
 const Index = () => {
   return (
-    <div className="space-y-4 p-4 md:p-6">
+    <div className="space-y-3 md:space-y-4 p-3 md:p-6">
       <HeroSection />
       <WhySection />
       <HowItWorksSection />
