@@ -100,9 +100,9 @@ export function Footer() {
 
         {/* Bottom Bar with Wordmark */}
         <div className="relative border-t border-border">
-          <div className="container-main py-6">
+          <div className="container-main py-4 md:py-6 px-4">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <div className="flex gap-6">
+              <div className="flex gap-4 md:gap-6">
                 <Link to="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
                   Integritetspolicy
                 </Link>
@@ -114,9 +114,9 @@ export function Footer() {
           </div>
 
           {/* Giant Wordmark with fade */}
-          <div className="relative h-32 md:h-48 overflow-hidden">
+          <div className="relative h-20 md:h-48 overflow-hidden">
             <div className="absolute inset-x-0 bottom-0 flex justify-center translate-y-[30%]">
-              <span className="footer-wordmark">rebelcv</span>
+              <span className="footer-wordmark text-[60px] md:text-[180px]">rebelcv</span>
             </div>
           </div>
         </div>

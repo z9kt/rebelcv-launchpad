@@ -30,18 +30,18 @@ const features = [
 
 export function FeaturesGridSection() {
   return (
-    <div className="grid sm:grid-cols-2 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
       {features.map((feature, index) => (
         <div 
           key={index} 
-          className="section-block p-8 md:p-10 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+          className="section-block p-5 md:p-10 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer"
         >
-          <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 bg-violet-50 text-violet-600">
+          <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl flex items-center justify-center mb-4 md:mb-5 bg-violet-50 text-violet-600">
             {feature.icon}
           </div>
-          <h3 className="text-xl font-semibold text-foreground mb-2">{feature.title}</h3>
-          <p className="text-muted-foreground leading-relaxed mb-2">{feature.description}</p>
-          <p className="text-muted-foreground/70 text-sm leading-relaxed mb-4">{feature.extra}</p>
+          <h3 className="text-lg md:text-xl font-semibold text-foreground mb-1.5 md:mb-2">{feature.title}</h3>
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-1.5 md:mb-2">{feature.description}</p>
+          <p className="text-muted-foreground/70 text-xs md:text-sm leading-relaxed mb-3 md:mb-4">{feature.extra}</p>
           <Link to="/funktioner" className="text-violet-600 text-sm font-medium hover:underline">
             Läs mer →
           </Link>

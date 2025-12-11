@@ -9,38 +9,38 @@ const features = [
 
 export function HeroSection() {
   return (
-    <section className="section-block py-16 md:py-24 overflow-hidden">
-      <div className="container-main">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <section className="section-block py-10 md:py-24 overflow-hidden">
+      <div className="container-main px-4 md:px-6">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
-            <div className="space-y-6">
-              <span className="label-text">AI-drivet levande CV</span>
-              <h1 className="heading-xl">
+          <div className="space-y-6 md:space-y-8">
+            <div className="space-y-4 md:space-y-6">
+              <span className="label-text text-[10px] md:text-xs">AI-drivet levande CV</span>
+              <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-foreground">
                 Ditt CV som vågar{" "}
                 <span className="text-accent">sticka ut</span>
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-lg">
+              <p className="text-base md:text-xl text-muted-foreground max-w-lg">
                 Klistra in en jobbannons-URL. Få matchningsanalys, skräddarsytt CV och personligt brev – allt på sekunder.
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-4">
-              <Link to="/logga-in" className="btn-primary">
+            <div className="flex flex-wrap gap-3 md:gap-4">
+              <Link to="/logga-in" className="btn-primary text-sm md:text-base">
                 Kom igång gratis
               </Link>
-              <a href="#hur-det-funkar" className="btn-secondary">
+              <a href="#hur-det-funkar" className="btn-secondary text-sm md:text-base">
                 Se hur det funkar
               </a>
             </div>
 
-            <ul className="space-y-3">
+            <ul className="space-y-2 md:space-y-3">
               {features.map((feature, index) => (
-                <li key={index} className="flex items-center gap-3 text-muted-foreground">
-                  <div className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0">
-                    <Check size={12} weight="bold" className="text-white" />
+                <li key={index} className="flex items-center gap-2 md:gap-3 text-muted-foreground">
+                  <div className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0">
+                    <Check size={10} weight="bold" className="text-white" />
                   </div>
-                  <span className="text-sm">{feature.text}</span>
+                  <span className="text-xs md:text-sm">{feature.text}</span>
                 </li>
               ))}
             </ul>
