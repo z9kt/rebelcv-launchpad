@@ -1,153 +1,129 @@
 import { Link } from "react-router-dom";
-import { SquaresFour, MagnifyingGlass, FileText, PencilLine, TrendUp, ClockCounterClockwise, ArrowRight } from "@phosphor-icons/react";
+import { SquaresFour, MagnifyingGlass, FileText, PencilLine, TrendUp, ClockCounterClockwise } from "@phosphor-icons/react";
 
 const modules = [
   {
-    icon: <SquaresFour size={28} weight="duotone" />,
+    icon: <SquaresFour size={32} weight="duotone" />,
     title: "Dashboard",
-    description: "Din centrala utgångspunkt",
-    color: "blue",
-    features: [
-      "Överblick av alla dina ansökningar",
-      "Snabbval för vanliga åtgärder",
-      "Statistik över din jobbsökning",
-      "AI-drivna tips och rekommendationer",
-    ],
+    tagline: "Din centrala utgångspunkt",
+    description: "Överblick av alla dina ansökningar med AI-drivna tips och rekommendationer.",
+    color: "bg-blue-50 text-blue-600",
   },
   {
-    icon: <MagnifyingGlass size={28} weight="duotone" />,
+    icon: <MagnifyingGlass size={32} weight="duotone" />,
     title: "Jobbskanning",
-    description: "Analysera vilken annons som helst",
-    color: "violet",
-    features: [
-      "Klistra in eller länka till jobbannons",
-      "Automatisk extraktion av nyckelkrav",
-      "Matchningsprocent mot din profil",
-      "Identifiering av styrkor och luckor",
-    ],
+    tagline: "Analysera vilken annons som helst",
+    description: "Klistra in en länk och få matchningsprocent mot din profil på sekunder.",
+    color: "bg-violet-50 text-violet-600",
   },
   {
-    icon: <FileText size={28} weight="duotone" />,
+    icon: <FileText size={32} weight="duotone" />,
     title: "Jobbanpassat CV",
-    description: "Skräddarsytt för varje tjänst",
-    color: "emerald",
-    features: [
-      "Automatiskt anpassat utifrån jobbkrav",
-      "Välj vilka erfarenheter som betonas",
-      "ATS-optimerade formuleringar",
-      "Export till PDF, Word eller delbar länk",
-    ],
+    tagline: "Skräddarsytt för varje tjänst",
+    description: "Automatiskt anpassat CV med ATS-optimerade formuleringar.",
+    color: "bg-emerald-50 text-emerald-600",
   },
   {
-    icon: <PencilLine size={28} weight="duotone" />,
+    icon: <PencilLine size={32} weight="duotone" />,
     title: "Personligt brev",
-    description: "Övertyga på rätt sätt",
-    color: "blue",
-    features: [
-      "Byggt på din profil och jobbkraven",
-      "Anpassad ton och längd",
-      "Framhäver relevanta erfarenheter",
-      "Stöd för olika språk",
-    ],
+    tagline: "Övertyga på rätt sätt",
+    description: "Byggt på din profil och jobbkraven med anpassad ton.",
+    color: "bg-amber-50 text-amber-600",
   },
   {
-    icon: <TrendUp size={28} weight="duotone" />,
+    icon: <TrendUp size={32} weight="duotone" />,
     title: "Karriäranalys",
-    description: "Insikter och rekommendationer",
-    color: "violet",
-    features: [
-      "Analys av dina styrkor",
-      "Rekommendationer på roller som passar dig",
-      "Jämförelse mot marknadens krav",
-      "Tips på kompetenser att utveckla",
-    ],
+    tagline: "Insikter och rekommendationer",
+    description: "Analys av dina styrkor och tips på roller som passar dig.",
+    color: "bg-sky-50 text-sky-600",
   },
   {
-    icon: <ClockCounterClockwise size={28} weight="duotone" />,
+    icon: <ClockCounterClockwise size={32} weight="duotone" />,
     title: "Historik & paket",
-    description: "Allt samlat på ett ställe",
-    color: "emerald",
-    features: [
-      "Alla skapade CV-versioner",
-      "Sparade personliga brev",
-      "Jobbskanningar och analyser",
-      "Export av komplett ansökningspaket",
-    ],
+    tagline: "Allt samlat på ett ställe",
+    description: "Alla CV-versioner, brev och analyser samlade och exporterbara.",
+    color: "bg-rose-50 text-rose-600",
   },
 ];
 
-const flowSteps = ["Profildata", "Jobbskanning", "CV + brev", "Statistik"];
-
 const Features = () => {
   return (
-    <div className="space-y-4">
+    <div className="space-y-16">
       {/* Hero */}
       <section className="section-block py-16 md:py-24">
         <div className="container-main">
           <div className="max-w-3xl mx-auto text-center">
             <span className="label-text mb-4 block">Plattform</span>
-            <h1 className="heading-xl mb-6">Funktioner</h1>
+            <h1 className="heading-xl mb-6">Utforska funktionerna.</h1>
             <p className="text-lg text-muted-foreground">
               RebelCV är uppdelat i tydliga moduler som var och en löser en specifik del av jobbsökningsprocessen.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Flow visualization */}
-      <section className="section-block py-8">
-        <div className="container-main">
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-2">
-            {flowSteps.map((step, index) => (
-              <div key={step} className="flex items-center gap-2 md:gap-4">
-                <div className="px-5 py-2.5 rounded-full bg-violet-50 border border-violet-100">
-                  <span className="text-sm font-medium text-violet-600">{step}</span>
-                </div>
-                {index < flowSteps.length - 1 && (
-                  <ArrowRight size={16} weight="bold" className="text-muted-foreground hidden md:block" />
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Modules Grid */}
-      <div className="grid md:grid-cols-2 gap-4">
-        {modules.map((module, index) => (
-          <div key={index} className="section-block p-8 md:p-10 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-            <div className="flex items-start gap-4 mb-6">
-              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center ${
-                module.color === "blue" ? "bg-blue-50 text-blue-600" :
-                module.color === "violet" ? "bg-violet-50 text-violet-600" :
-                "bg-emerald-50 text-emerald-600"
-              }`}>
-                {module.icon}
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-foreground">{module.title}</h3>
-                <p className="text-muted-foreground text-sm">{module.description}</p>
-              </div>
-            </div>
-
-            <ul className="space-y-3 mb-6">
-              {module.features.map((feature, i) => (
-                <li key={i} className="flex items-start gap-3 text-muted-foreground text-sm">
-                  <span className={`w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 ${
-                    module.color === "violet" ? "bg-violet-500" : 
-                    module.color === "emerald" ? "bg-emerald-500" : "bg-blue-500"
-                  }`} />
-                  {feature}
-                </li>
-              ))}
-            </ul>
-
-            <Link to="/app-demo" className="text-violet-600 text-sm font-medium hover:underline">
-              Se i action →
+            <Link to="/app-demo" className="text-primary text-sm font-medium hover:underline mt-4 inline-block">
+              Jämför alla funktioner →
             </Link>
           </div>
-        ))}
-      </div>
+        </div>
+      </section>
+
+      {/* Apple-style Grid */}
+      <section className="px-4 md:px-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+          {modules.map((module, index) => (
+            <div 
+              key={index} 
+              className="flex flex-col items-center text-center group"
+            >
+              {/* Icon card */}
+              <div className={`w-full aspect-square rounded-3xl ${module.color} flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300`}>
+                <div className="scale-150">
+                  {module.icon}
+                </div>
+              </div>
+              
+              {/* Content */}
+              <p className="text-xs text-muted-foreground mb-1">{module.tagline}</p>
+              <h3 className="text-base font-semibold text-foreground mb-2">{module.title}</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-4 px-1">
+                {module.description}
+              </p>
+              
+              {/* Actions */}
+              <div className="flex items-center gap-3 text-xs">
+                <Link 
+                  to="/app-demo" 
+                  className="px-4 py-1.5 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
+                >
+                  Läs mer
+                </Link>
+                <Link 
+                  to="/priser" 
+                  className="text-primary font-medium hover:underline"
+                >
+                  Testa →
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Bottom section */}
+      <section className="section-block py-16">
+        <div className="container-main text-center">
+          <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
+            Redo att ta nästa steg?
+          </h2>
+          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+            Skapa ditt konto och börja använda alla funktioner direkt.
+          </p>
+          <Link 
+            to="/login" 
+            className="inline-flex px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
+          >
+            Kom igång gratis
+          </Link>
+        </div>
+      </section>
     </div>
   );
 };
