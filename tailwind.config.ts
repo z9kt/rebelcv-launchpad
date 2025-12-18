@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         script: ['Caveat', 'cursive'],
+        tomorrow: ['Tomorrow', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
