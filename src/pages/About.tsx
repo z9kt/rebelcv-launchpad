@@ -102,7 +102,7 @@ const About = () => {
                       <span className="text-xs font-medium text-muted-foreground/70 uppercase tracking-wider">
                         {item.date}
                       </span>
-                      <h3 className="font-tomorrow text-3xl md:text-4xl font-semibold text-foreground mt-2 mb-3 transition-colors group-hover:text-violet-600">
+                      <h3 className="font-lobster text-3xl md:text-4xl text-foreground mt-2 mb-3 transition-colors group-hover:text-violet-600">
                         {item.title}
                       </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
@@ -142,7 +142,7 @@ const About = () => {
                       <span className="text-xs font-medium text-muted-foreground/70 uppercase tracking-wider">
                         {item.date}
                       </span>
-                      <h3 className="font-tomorrow text-3xl font-semibold text-foreground mt-1 mb-2">
+                      <h3 className="font-lobster text-3xl text-foreground mt-1 mb-2">
                         {item.title}
                       </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
