@@ -17,6 +17,7 @@ export default {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         script: ['Caveat', 'cursive'],
         tomorrow: ['Tomorrow', 'sans-serif'],
+        lobster: ['Lobster', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",
