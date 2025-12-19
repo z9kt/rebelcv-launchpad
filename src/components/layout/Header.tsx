@@ -22,7 +22,7 @@ export function Header() {
             {/* Logo */}
             <Link to="/" className="flex flex-col">
               <span className="text-lg md:text-xl font-semibold tracking-tight text-foreground">rebelcv</span>
-              <span className="text-[10px] md:text-xs text-muted-foreground -mt-0.5">AI-drivet levande CV</span>
+              <span className="text-[10px] md:text-xs text-primary -mt-0.5">AI-drivet levande CV</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -93,7 +93,7 @@ export function Header() {
             {/* Logo in popup */}
             <div className="mb-6">
               <span className="text-xl font-semibold tracking-tight text-foreground">rebelcv</span>
-              <span className="block text-xs text-muted-foreground">AI-drivet levande CV</span>
+              <span className="block text-xs text-primary">AI-drivet levande CV</span>
             </div>
 
             {/* Navigation links */}
