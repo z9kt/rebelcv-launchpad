@@ -1,13 +1,32 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useAuth } from "@/contexts/AuthContext";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const { signIn, user } = useAuth();
+  const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user, navigate]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Login attempt:", { email, password });
+    setLoading(true);
+    setError(null);
+
+    const { error } = await signIn(email, password);
+
+    if (error) {
+      setError(error.message);
+    }
+    setLoading(false);
   };
 
   return (
@@ -38,15 +57,23 @@ const Login = () => {
               <label className="flex items-center gap-2 text-muted-foreground cursor-pointer">
                 <input type="checkbox" className="w-4 h-4 rounded" /> Kom ihåg mig
               </label>
-              <Link to="#" className="text-blue-600 hover:underline">Glömt lösenord?</Link>
+              <Link to="/glomt-losenord" className="text-blue-600 hover:underline">Glömt lösenord?</Link>
             </div>
 
-            <button type="submit" className="btn-primary w-full">Logga in</button>
+            {error && (
+              <div className="p-3 rounded-lg bg-red-50 border border-red-200 text-red-600 text-sm">
+                {error}
+              </div>
+            )}
+
+            <button type="submit" className="btn-primary w-full" disabled={loading}>
+              {loading ? "Loggar in..." : "Logga in"}
+            </button>
           </form>
 
           <div className="mt-8 pt-6 border-t border-border text-center">
             <p className="text-muted-foreground text-sm">
-              Inget konto? <Link to="#" className="text-blue-600 hover:underline font-medium">Kom igång gratis</Link>
+              Inget konto? <Link to="/registrera" className="text-blue-600 hover:underline font-medium">Kom igång gratis</Link>
             </p>
           </div>
         </div>
