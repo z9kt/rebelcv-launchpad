@@ -137,21 +137,39 @@ export function Header() {
 
             {/* CTA section */}
             <div className="pt-4 border-t border-border space-y-3">
-              <Link
-                to="/logga-in"
-                onClick={() => setMobileMenuOpen(false)}
-                className="block text-center px-4 py-3 text-muted-foreground hover:text-foreground transition-colors"
-              >
-                Logga in
-              </Link>
-              <Link
-                to="/logga-in"
-                onClick={() => setMobileMenuOpen(false)}
-                className="btn-primary block text-center"
-              >
-                Kom igång gratis
-              </Link>
+              {user ? (
+                <>
+                  <p className="text-center text-sm text-muted-foreground truncate">{user.email}</p>
+                  <button
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      signOut();
+                    }}
+                    className="btn-primary w-full text-center"
+                  >
+                    Logga ut
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link
+                    to="/logga-in"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block text-center px-4 py-3 text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    Logga in
+                  </Link>
+                  <Link
+                    to="/registrera"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="btn-primary block text-center"
+                  >
+                    Kom igång gratis
+                  </Link>
+                </>
+              )}
             </div>
+
           </div>
         </div>
       )}
