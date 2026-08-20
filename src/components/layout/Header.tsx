@@ -47,16 +47,34 @@ export function Header() {
 
             {/* Desktop CTA */}
             <div className="hidden md:flex items-center gap-4">
-              <Link
-                to="/logga-in"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              >
-                Logga in
-              </Link>
-              <Link to="/logga-in" className="btn-primary">
-                Kom igång gratis
-              </Link>
+              {user ? (
+                <>
+                  <span className="text-sm text-muted-foreground max-w-[180px] truncate">
+                    {user.email}
+                  </span>
+                  <button
+                    onClick={() => signOut()}
+                    className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    <SignOut size={18} weight="duotone" />
+                    Logga ut
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link
+                    to="/logga-in"
+                    className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    Logga in
+                  </Link>
+                  <Link to="/registrera" className="btn-primary">
+                    Kom igång gratis
+                  </Link>
+                </>
+              )}
             </div>
+
 
             {/* Mobile Menu Button */}
             <button
