@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { List, X } from "@phosphor-icons/react";
+import { List, X, SignOut } from "@phosphor-icons/react";
+import { useAuth } from "@/contexts/AuthContext";
 
 const navLinks = [
   { to: "/hur-det-funkar", label: "Hur det funkar" },
@@ -13,6 +14,8 @@ const navLinks = [
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { user, signOut } = useAuth();
+
 
   return (
     <>
