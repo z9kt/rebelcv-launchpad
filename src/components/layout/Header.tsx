@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { List, X } from "@phosphor-icons/react";
+import { List, X, SignOut } from "@phosphor-icons/react";
+import { useAuth } from "@/contexts/AuthContext";
 
 const navLinks = [
   { to: "/hur-det-funkar", label: "Hur det funkar" },
@@ -13,6 +14,8 @@ const navLinks = [
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { user, signOut } = useAuth();
+
 
   return (
     <>
@@ -44,16 +47,34 @@ export function Header() {
 
             {/* Desktop CTA */}
             <div className="hidden md:flex items-center gap-4">
-              <Link
-                to="/logga-in"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              >
-                Logga in
-              </Link>
-              <Link to="/logga-in" className="btn-primary">
-                Kom igång gratis
-              </Link>
+              {user ? (
+                <>
+                  <span className="text-sm text-muted-foreground max-w-[180px] truncate">
+                    {user.email}
+                  </span>
+                  <button
+                    onClick={() => signOut()}
+                    className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    <SignOut size={18} weight="duotone" />
+                    Logga ut
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link
+                    to="/logga-in"
+                    className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    Logga in
+                  </Link>
+                  <Link to="/registrera" className="btn-primary">
+                    Kom igång gratis
+                  </Link>
+                </>
+              )}
             </div>
+
 
             {/* Mobile Menu Button */}
             <button
@@ -116,21 +137,39 @@ export function Header() {
 
             {/* CTA section */}
             <div className="pt-4 border-t border-border space-y-3">
-              <Link
-                to="/logga-in"
-                onClick={() => setMobileMenuOpen(false)}
-                className="block text-center px-4 py-3 text-muted-foreground hover:text-foreground transition-colors"
-              >
-                Logga in
-              </Link>
-              <Link
-                to="/logga-in"
-                onClick={() => setMobileMenuOpen(false)}
-                className="btn-primary block text-center"
-              >
-                Kom igång gratis
-              </Link>
+              {user ? (
+                <>
+                  <p className="text-center text-sm text-muted-foreground truncate">{user.email}</p>
+                  <button
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      signOut();
+                    }}
+                    className="btn-primary w-full text-center"
+                  >
+                    Logga ut
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link
+                    to="/logga-in"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block text-center px-4 py-3 text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    Logga in
+                  </Link>
+                  <Link
+                    to="/registrera"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="btn-primary block text-center"
+                  >
+                    Kom igång gratis
+                  </Link>
+                </>
+              )}
             </div>
+
           </div>
         </div>
       )}
