@@ -1,7 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useAuth } from "@/contexts/AuthContext";
-import { CheckCircle } from "lucide-react";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -9,8 +8,14 @@ const Register = () => {
   const [fullName, setFullName] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [success, setSuccess] = useState(false);
-  const { signUp } = useAuth();
+  const { signUp, user } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user, navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,32 +32,11 @@ const Register = () => {
 
     if (error) {
       setError(error.message);
-    } else {
-      setSuccess(true);
     }
     setLoading(false);
   };
 
-  if (success) {
-    return (
-      <div className="min-h-[80vh] flex items-center justify-center">
-        <div className="w-full max-w-md">
-          <div className="section-block p-8 md:p-10 text-center">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <CheckCircle className="w-8 h-8 text-green-600" />
-            </div>
-            <h1 className="text-2xl font-semibold text-foreground mb-2">Kolla din inkorg!</h1>
-            <p className="text-muted-foreground mb-6">
-              Vi har skickat en bekräftelselänk till <strong>{email}</strong>. Klicka på länken för att aktivera ditt konto.
-            </p>
-            <Link to="/logga-in" className="btn-primary inline-block">
-              Gå till inloggning
-            </Link>
-          </div>
-        </div>
-      </div>
-    );
-  }
+
 
   return (
     <div className="min-h-[80vh] flex items-center justify-center">
